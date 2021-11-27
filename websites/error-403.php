@@ -6,11 +6,11 @@
       <div class="col-lg-7 mx-auto text-white">
         <div class="row align-items-center d-flex flex-row">
           <div class="col-lg-6 text-lg-right pr-lg-4">
-            <h1 class="display-1 mb-0">404</h1>
+            <h1 class="display-1 mb-0">403</h1>
           </div>
           <div class="col-lg-6 error-page-divider text-lg-left pl-lg-4">
-            <h2>NOT FOUND!</h2>
-            <h3 class="font-weight-light">Halaman yang anda cari tidak dapat ditemukan.</h3>
+            <h2>FORBIDDEN!</h2>
+            <h3 class="font-weight-light">Halaman yang anda cari membutuhkan akses login.</h3>
           </div>
         </div>
         <div class="row mt-5">
@@ -29,16 +29,4 @@
   <!-- content-wrapper ends -->
 </div>
 
-<script>
-  setTimeout(function() {
-    Swal.fire({
-      title: 'Peringatan!',
-      text: 'Halaman Tidak Ditemukan!',
-      icon: 'error',
-      timer: '3000',
-      showCancelButton: false,
-      showConfirmButton: false
-    });
-  }, 10);
-</script>
 <?php include 'components/bottom-link.php'; ?>
