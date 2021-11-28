@@ -1,4 +1,5 @@
 <?php include 'components/top-link.php'; ?>
+<?php include 'process/session.php' ?>
 <?php include 'components/topbar.php'; ?>
 <?php include 'components/sidebar.php'; ?>
 
@@ -11,7 +12,7 @@
                 <div class="col-12">
                     <div class="d-flex table-responsive">
                         <div class="btn-group mr-2">
-                            <a href="input-kategori.php">
+                            <a href="input-kategori">
                                 <button type="button" class="btn btn-sm btn-primary">
                                     <i class="mdi mdi-bookmark-plus-outline"></i>Tambah
                                 </button>

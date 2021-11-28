@@ -1,4 +1,5 @@
 <?php include 'components/top-link.php'; ?>
+<?php include 'process/session.php' ?>
 <?php include 'components/topbar.php'; ?>
 <?php include 'components/sidebar.php'; ?>
 

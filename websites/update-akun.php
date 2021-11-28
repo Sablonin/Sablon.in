@@ -62,7 +62,7 @@
                     <button class="btn btn-sm btn-primary" type="submit" name="update-akun">
                         <i class="mdi mdi-account-plus"></i>Register
                     </button>
-                    <a href="data-barang.php">
+                    <a href="data-barang">
                         <button type="button" class="btn btn-sm btn-outline-secondary">
                             <i class="mdi mdi-step-backward"></i>Kembali
                         </button>

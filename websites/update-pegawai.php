@@ -1,4 +1,5 @@
 <?php include 'components/top-link.php'; ?>
+<?php include 'process/session.php' ?>
 <?php include 'components/topbar.php'; ?>
 <?php include 'components/sidebar.php'; ?>
 
@@ -90,7 +91,7 @@
                     <button type="submit" name="update-pegawai" class="btn btn-sm btn-warning">
                         <i class="mdi mdi-account-edit"></i>Update
                     </button>
-                    <a href="data-pegawai.php">
+                    <a href="data-pegawai">
                         <button type="button" class="btn btn-sm btn-outline-secondary">
                             <i class="mdi mdi-step-backward"></i>Kembali
                         </button>

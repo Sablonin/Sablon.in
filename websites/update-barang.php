@@ -36,7 +36,7 @@
                             <button type="submit" name="update-barang" class="btn btn-sm btn-warning">
                                 <i class="mdi mdi-update"></i>Update
                             </button>
-                            <a href="data-barang.php">
+                            <a href="data-barang">
                                 <button type="button" class="btn btn-sm btn-outline-secondary">
                                     <i class="mdi mdi-step-backward"></i>Kembali
                                 </button>

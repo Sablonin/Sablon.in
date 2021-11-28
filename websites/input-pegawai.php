@@ -1,4 +1,5 @@
 <?php include 'components/top-link.php'; ?>
+<?php include 'process/session.php' ?>
 <?php include 'components/topbar.php'; ?>
 <?php include 'components/sidebar.php'; ?>
 
@@ -86,7 +87,7 @@
                     <button class="btn btn-sm btn-primary " type="submit" name="tambah-pegawai">
                         <i class="mdi mdi-account-plus"></i>Tambah
                     </button>
-                    <a href="data-pegawai.php">
+                    <a href="data-pegawai">
                         <button type="button" class="btn btn-sm btn-outline-secondary">
                             <i class="mdi mdi-step-backward"></i>Kembali
                         </button>

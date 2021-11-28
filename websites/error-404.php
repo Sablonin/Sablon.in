@@ -29,16 +29,4 @@
   <!-- content-wrapper ends -->
 </div>
 
-<script>
-  setTimeout(function() {
-    Swal.fire({
-      title: 'Peringatan!',
-      text: 'Halaman Tidak Ditemukan!',
-      icon: 'error',
-      timer: '3000',
-      showCancelButton: false,
-      showConfirmButton: false
-    });
-  }, 10);
-</script>
 <?php include 'components/bottom-link.php'; ?>

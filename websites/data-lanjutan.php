@@ -1,4 +1,5 @@
 <?php include 'components/top-link.php'; ?>
+<?php include 'process/session.php' ?>
 <?php include 'components/topbar.php'; ?>
 <?php include 'components/sidebar.php'; ?>
 
@@ -73,7 +74,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <a href="data-pegawai.php">
+                    <a href="data-pegawai">
                         <button type="button" class="mt-4 btn btn-sm btn-secondary">
                             <i class="mdi mdi-step-backward"></i>Kembali
                         </button>

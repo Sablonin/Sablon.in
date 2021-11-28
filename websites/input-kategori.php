@@ -1,4 +1,5 @@
 <?php include 'components/top-link.php'; ?>
+<?php include 'process/session.php' ?>
 <?php include 'components/topbar.php'; ?>
 <?php include 'components/sidebar.php'; ?>
 
@@ -24,7 +25,7 @@
                             <button type="submit" name="tambah-kategori" class="btn btn-sm btn-primary">
                                 <i class="mdi mdi-bookmark-plus-outline"></i>Tambah
                             </button>
-                            <a href="data-kategori.php">
+                            <a href="data-kategori">
                                 <button type="button" class="btn btn-sm btn-outline-secondary">
                                     <i class="mdi mdi-step-backward"></i>Kembali
                                 </button>
