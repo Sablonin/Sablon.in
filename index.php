@@ -1,1 +1,1 @@
-<?php header("location: websites/dashboard");
+<?php header("location: websites/login");
