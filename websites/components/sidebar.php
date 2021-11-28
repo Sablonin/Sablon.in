@@ -2,7 +2,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link" href="dashboard.php">
+            <a class="nav-link" href="dashboard">
                 <i class="mdi mdi-view-dashboard-outline menu-icon"></i>
                 <span class="menu-title">Dashboard</span>
             </a>
@@ -15,9 +15,9 @@
             </a>
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="data-barang.php">Data Barang</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="data-kategori.php">Data Kategori</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="data-riwayat.php">Data Riwayat</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="data-barang">Data Barang</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="data-kategori">Data Kategori</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="data-riwayat">Data Riwayat</a></li>
                 </ul>
             </div>
         </li>
@@ -29,9 +29,9 @@
             </a>
             <div class="collapse" id="ui-advanced">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="data-pegawai.php">Data Pegawai</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="data-akun.php">Data Akun</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="#">Daftar Akun</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="data-pegawai">Data Pegawai</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="data-akun">Data Akun</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="input-akun">Daftar Akun</a></li>
                 </ul>
             </div>
         </li>

@@ -19,6 +19,13 @@
     <script src="../assets/js/settings.js"></script>
     <script src="../assets/js/todolist.js"></script>
     <!-- endinject -->
+
+    <!-- Sweetalert2 -->
+    <!-- <script src="../assets/js/jquery-3.6.0.min.js"></script> -->
+    <script src="../assets/js/sweetalert2.all.min.js"></script>
+    <script src="../assets/js/sweetalert2.min.js"></script>
+    <!-- End Sweetalert2 -->
+
     <!-- Custom js for this page-->
     <script src="../assets/js/data-table.js"></script>
     <script src="../assets/js/form-validation.js"></script>

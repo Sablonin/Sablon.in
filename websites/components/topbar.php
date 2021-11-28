@@ -9,14 +9,22 @@
             <span class="mdi mdi-menu"></span>
         </button>
         <ul class="navbar-nav navbar-nav-right">
-
+            <li class="nav-item mt-1">
+                <?php
+                include '../configs/koneksi.php';
+                $IDPegawai = $_SESSION['IDPegawai'];
+                $GetPegawai = mysqli_query($conn, "SELECT * FROM pegawai WHERE IDPegawai = '$IDPegawai'");
+                $Data = mysqli_fetch_array($GetPegawai);
+                echo $Data['Nama'];
+                ?>
+            </li>
             <li class="nav-item nav-profile dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
                     <img src="../assets/images/profil.png" alt="profile" />
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                     <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
+                    <a href="process/logout-process" class="dropdown-item">
                         <i class="mdi mdi-logout text-primary"></i>
                         Logout
                     </a>

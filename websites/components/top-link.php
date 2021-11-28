@@ -20,8 +20,10 @@
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="../assets/css/vertical-layout-light/style.css">
+    <link rel="stylesheet" href="../assets/css/sweetalert2.min.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="../assets/images/sablon1.png" />
+
 </head>
 
 <!-- Start Body -->
