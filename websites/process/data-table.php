@@ -34,7 +34,7 @@ function Barang()
                     confirmButtonText: 'Confirm'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        document.location.href = 'process/delete-barang?IDBarang=<?= $Data['IDBarang'] ?>';
+                        document.location.href = 'process/delete-data?IDBarang=<?= $Data['IDBarang'] ?>';
                     }
                 })
             }
@@ -120,7 +120,7 @@ function Pegawai()
                     confirmButtonText: 'Confirm'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        document.location.href = 'process/delete-pegawai?IDPegawai=<?= $Data['IDPegawai'] ?>';
+                        document.location.href = 'process/delete-data?IDPegawai=<?= $Data['IDPegawai'] ?>';
                     }
                 })
             }
@@ -173,7 +173,7 @@ function LoginAkun()
                     confirmButtonText: 'Confirm'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        document.location.href = 'process/delete-akun?IDLogin=<?= $Data['IDLogin'] ?>';
+                        document.location.href = 'process/delete-data?IDLogin=<?= $Data['IDLogin'] ?>';
                     }
                 })
             }
