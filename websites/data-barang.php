@@ -12,16 +12,26 @@
                 <div class="col-12">
                     <div class="d-flex table-responsive">
                         <div class="btn-group mr-2">
-                            <a href="input-barang">
-                                <button type="button" class="btn btn-sm btn-primary">
-                                    <i class="mdi mdi-library-plus"></i>Tambah
-                                </button>
-                            </a>
+                            <?php
+                            require 'process/session-level.php';
+                            if ($IDLevel == 1) {
+                                echo '
+                                <a href="input-barang">
+                                    <button type="button" class="btn btn-sm btn-primary">
+                                        <i class="mdi mdi-library-plus"></i>Tambah
+                                    </button>
+                                </a>
+                                ';
+                            }
+                            ?>
                         </div>
                     </div>
                     <div class="table-responsive mt-2">
                         <table id="order-listing" class="table">
                             <thead>
+                                <?php
+                                if ($IDLevel == 1) {
+                                    echo '
                                 <tr>
                                     <th>Kode</th>
                                     <th>Barang</th>
@@ -29,11 +39,28 @@
                                     <th>Stok</th>
                                     <th>Action</th>
                                 </tr>
+                                ';
+                                } else if ($IDLevel == 2) {
+                                    echo '
+                                    <tr>
+                                    <th>Kode</th>
+                                    <th>Barang</th>
+                                    <th>Kategori</th>
+                                    <th>Stok</th>
+                                </tr>
+                                    ';
+                                }
+                                ?>
                             </thead>
                             <tbody>
                                 <?php
-                                include 'process/data-table.php';
-                                Barang(); ?>
+                                require 'process/data-table.php';
+                                if ($IDLevel == 1) {
+                                    BarangEdit();
+                                } else if ($IDLevel == 2) {
+                                    BarangView();
+                                }
+                                ?>
                             </tbody>
                         </table>
                     </div>

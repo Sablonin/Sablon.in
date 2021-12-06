@@ -12,11 +12,17 @@
                 <div class="col-12">
                     <div class="d-flex table-responsive">
                         <div class="btn-group mr-2">
-                            <a href="input-kategori">
-                                <button type="button" class="btn btn-sm btn-primary">
-                                    <i class="mdi mdi-bookmark-plus-outline"></i>Tambah
-                                </button>
-                            </a>
+                            <?php require 'process/session-level.php';
+                            if ($IDLevel == 1) {
+                                echo '
+                                    <a href="input-kategori">
+                                    <button type="button" class="btn btn-sm btn-primary">
+                                        <i class="mdi mdi-bookmark-plus-outline"></i>Tambah
+                                    </button>
+                                    </a>
+                                ';
+                            }
+                            ?>
                         </div>
                     </div>
                     <div class="table-responsive mt-2">

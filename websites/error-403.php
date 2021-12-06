@@ -10,7 +10,7 @@
           </div>
           <div class="col-lg-6 error-page-divider text-lg-left pl-lg-4">
             <h2>FORBIDDEN!</h2>
-            <h3 class="font-weight-light">Halaman yang anda cari membutuhkan akses login.</h3>
+            <h3 class="font-weight-light">Halaman yang anda cari membutuhkan akses khusus.</h3>
           </div>
         </div>
         <div class="row mt-5">

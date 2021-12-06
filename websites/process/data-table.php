@@ -1,8 +1,23 @@
 <?php
-include '../configs/koneksi.php';
+require '../configs/koneksi.php';
+
+function BarangView()
+{
+    global $conn;
+    $GetBarang = mysqli_query($conn, "SELECT barang.*, kategori.Kategori FROM barang INNER JOIN kategori ON barang.IDKategori = kategori.IDKategori");
+    while ($Data = mysqli_fetch_array($GetBarang)) { ?>
+        <tr>
+            <td><?= $Data['IDBarang'] ?></td>
+            <td><?= $Data['Barang'] ?></td>
+            <td><?= $Data['Kategori'] ?></td>
+            <td><?= $Data['Stok'] ?></td>
+        </tr>
+    <?php
+    }
+}
 
 //Mengambil tabel barang
-function Barang()
+function BarangEdit()
 {
     global $conn;
     $GetBarang = mysqli_query($conn, "SELECT barang.*, kategori.Kategori FROM barang INNER JOIN kategori ON barang.IDKategori = kategori.IDKategori");
@@ -213,5 +228,9 @@ function JumlahRiwayat()
 }
 
 //Mengambil tabel ulasan
-$GetUlasan = mysqli_query($conn, "SELECT * FROM ulasan");
-$JumlahUlasan = mysqli_num_rows($GetUlasan);
+function Ulasan()
+{
+    global $conn;
+    $GetUlasan = mysqli_query($conn, "SELECT * FROM ulasan");
+    $JumlahUlasan = mysqli_num_rows($GetUlasan);
+}

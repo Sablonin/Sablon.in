@@ -2,6 +2,7 @@
 <?php include 'process/session.php' ?>
 <?php include 'components/topbar.php'; ?>
 <?php include 'components/sidebar.php'; ?>
+<?php require 'process/session-admin.php'; ?>
 
 <!-- Start Content Wrapper -->
 <div class="content-wrapper">
