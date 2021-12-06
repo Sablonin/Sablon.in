@@ -9,6 +9,7 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Update Akun</h4>
+                <?php require 'process/data-update.php'; ?>
                 <form method="POST" class="form-sample">
                     <?php
                     include '../configs/koneksi.php';
@@ -47,7 +48,7 @@
                             <div class="form-group row">
                                 <label for="Username" class="col-sm-3 col-form-label">Username</label>
                                 <div class="col-sm-9">
-                                    <input id="Username" name="Username" type="text" class="form-control" oninput="this.value = this.value.replace(/[^a-zA-z0-9]/, '')" minlength="6" maxlength="12" placeholder="Username" value="<?php echo $DataAkun['Username']; ?>" required />
+                                    <input id="Username" name="Username" type="text" class="form-control" oninput="this.value = this.value.replace(/[^a-zA-z0-9]/, '')" minlength="6" maxlength="12" placeholder="Username" value="<?php echo $DataAkun['Username']; ?>" readonly />
                                 </div>
                             </div>
                         </div>
@@ -61,9 +62,9 @@
                         </div>
                     </div>
                     <button class="btn btn-sm btn-primary" type="submit" name="update-akun">
-                        <i class="mdi mdi-account-plus"></i>Register
+                        <i class="mdi mdi-account-plus"></i>Update
                     </button>
-                    <a href="data-barang">
+                    <a href="data-akun">
                         <button type="button" class="btn btn-sm btn-outline-secondary">
                             <i class="mdi mdi-step-backward"></i>Kembali
                         </button>

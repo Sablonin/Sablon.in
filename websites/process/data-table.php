@@ -93,12 +93,12 @@ function Pegawai()
             <td><?= $Data['Jabatan'] ?></td>
             <td>
                 <form action="POST">
-                    <a href='data-lanjutan?IDPegawai=$Data[IDPegawai]'>
+                    <a href='data-lanjutan?IDPegawai=<?= $Data['IDPegawai'] ?>'>
                         <button type='button' class='btn btn-social-icon btn-outline-info'>
                             <i class='fa fa-id-card'></i>
                         </button>
                     </a>
-                    <a href='update-pegawai?IDPegawai=$Data[IDPegawai]'>
+                    <a href='update-pegawai?IDPegawai=<?= $Data['IDPegawai'] ?>'>
                         <button type='button' class='btn btn-social-icon btn-outline-warning'>
                             <i class='fa fa-pencil'></i>
                         </button>
@@ -153,7 +153,7 @@ function LoginAkun()
             <td><?= $Data['Akses'] ?></td>
             <td>
                 <form action="POST">
-                    <a href='update-akun?IDLogin=$Data[IDLogin]'>
+                    <a href='update-akun?IDLogin=<?= $Data['IDLogin'] ?>'>
                         <button type='button' class='btn btn-social-icon btn-outline-warning'><i class='fa fa-pencil'></i>
                         </button>
                     </a>

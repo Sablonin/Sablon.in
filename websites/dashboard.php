@@ -43,7 +43,37 @@
             </div>
         </div>
     </div>
-
+    <div class="row grid-margin">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="owl-carousel owl-theme loop">
+                        <div class="item">
+                            <img src="../assets/images/carousel/banner_7.jpg" alt="image" />
+                        </div>
+                        <div class="item">
+                            <img src="../assets/images/carousel/banner_8.jpg" alt="image" />
+                        </div>
+                        <div class="item">
+                            <img src="../assets/images/carousel/banner_9.jpg" alt="image" />
+                        </div>
+                        <div class="item">
+                            <img src="../assets/images/carousel/banner_10.jpg" alt="image" />
+                        </div>
+                        <div class="item">
+                            <img src="../assets/images/carousel/banner_11.jpg" alt="image" />
+                        </div>
+                        <div class="item">
+                            <img src="../assets/images/carousel/banner_12.jpg" alt="image" />
+                        </div>
+                        <div class="item">
+                            <img src="../assets/images/carousel/banner_2.jpg" alt="image" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- End Content Wrapper -->
 

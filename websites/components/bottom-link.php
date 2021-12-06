@@ -29,6 +29,7 @@
     <!-- Custom js for this page-->
     <script src="../assets/js/data-table.js"></script>
     <script src="../assets/js/form-validation.js"></script>
+    <script src="../assets/js/owl-carousel.js"></script>
     <!-- End custom js for this page-->
     </body>
     <!-- End Body -->

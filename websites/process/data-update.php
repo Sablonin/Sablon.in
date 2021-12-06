@@ -87,3 +87,43 @@ if (isset($_POST['update-barang'])) {
         ";
     }
 }
+
+if (isset($_POST['update-akun'])) {
+    $IDLogin = htmlspecialchars(trim($_POST['IDLogin']));
+    $Password = htmlspecialchars(trim($_POST['Password']));
+
+    if (empty($Password)) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Peringatan!',
+                text: 'Silahkan Isi Password!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+    } else {
+        mysqli_query($conn, "UPDATE login SET Password = '$Password' WHERE IDLogin = '$IDLogin'");
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Peringatan!',
+                text: 'Update Berhasil!',
+                icon: 'success',
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        window.setTimeout(function(){ 
+            window.location.replace('data-akun');
+        },2000);
+        </script>
+        ";
+    }
+}

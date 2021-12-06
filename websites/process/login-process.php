@@ -50,7 +50,7 @@ if (isset($_POST['button-login'])) {
             setTimeout(function() {
                 Swal.fire({
                     title: 'Login Berhasil!',
-                    text: 'Selamat Datang $Username',
+                    text: 'Selamat Datang',
                     icon: 'success',
                     showCancelButton: false,
                     showConfirmButton: false

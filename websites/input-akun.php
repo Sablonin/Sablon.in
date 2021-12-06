@@ -9,7 +9,7 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Register</h4>
-                <?php include 'process/data-insert.php'; ?>
+                <?php require 'process/data-insert.php'; ?>
                 <form method="POST" class="form-sample">
                     <div class="row">
                         <div class="col-md-6">
