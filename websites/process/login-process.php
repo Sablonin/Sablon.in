@@ -1,5 +1,5 @@
 <?php
-include '../configs/koneksi.php';
+require '../configs/koneksi.php';
 session_start();
 error_reporting(0);
 
