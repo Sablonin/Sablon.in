@@ -15,7 +15,7 @@
         </div>
         <div class="row mt-5">
           <div class="col-12 text-center mt-xl-2">
-            <a class="text-white font-weight-medium" href="login">Kembali</a>
+            <a class="text-white font-weight-medium" href="login-page">Kembali</a>
           </div>
         </div>
         <div class="row mt-5">
