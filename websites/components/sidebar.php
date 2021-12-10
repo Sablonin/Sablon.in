@@ -52,7 +52,7 @@ if ($IDLevel == 1) {
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#ui-akun" aria-expanded="false" aria-controls="ui-advanced">
+                    <a class="nav-link" data-toggle="collapse" href="#ui-akun" aria-expanded="false" aria-controls="ui-akun">
                         <i class="mdi mdi-account-key menu-icon"></i>
                         <span class="menu-title">Kelola Akun</span>
                         <i class="menu-arrow"></i>
@@ -65,15 +65,22 @@ if ($IDLevel == 1) {
                     </div>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#ui-ulasan" aria-expanded="false" aria-controls="ui-ulasan">
+                        <i class="mdi mdi-email-outline menu-icon"></i>
+                        <span class="menu-title">Kelola Ulasan</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="ui-ulasan">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="data-ulasan">Data Ulasan</a></li>
+                            <li class="nav-item"> <a class="nav-link" href="input-ulasan">Input Ulasan</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="data-riwayat">
                         <i class="mdi mdi-file-document-box-outline menu-icon"></i>
                         <span class="menu-title">Riwayat Barang</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="mdi mdi-email-outline menu-icon"></i>
-                        <span class="menu-title">Kelola Ulasan</span>
                     </a>
                 </li>
             </ul>
@@ -110,7 +117,7 @@ if ($IDLevel == 1) {
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="data-ulasan">
                         <i class="mdi mdi-email-outline menu-icon"></i>
                         <span class="menu-title">Kelola Ulasan</span>
                     </a>
