@@ -1,5 +1,5 @@
 <?php
-include '../configs/koneksi.php';
+require '../configs/koneksi.php';
 
 if (isset($_POST['tambah-pegawai'])) {
     $IDPegawai = htmlspecialchars(trim($_POST['IDPegawai']));
@@ -184,6 +184,120 @@ if (isset($_POST['tambah-akun'])) {
         });  
         window.setTimeout(function(){ 
             window.location.replace('data-akun');
+        },2000);
+        </script>
+        ";
+    }
+}
+
+if (isset($_POST['tambah-ulasan'])) {
+    $InputKode = trim($_POST['IDUlasan']);
+    $InputNama = trim($_POST['Nama']);
+    $InputUlasan = trim($_POST['Ulasan']);
+    $InputFoto = strtolower($_FILES['Foto']['name']);
+    $Resource = $_FILES['Foto']['tmp_name'];
+    $Check = $_FILES['Foto']['error'];
+    $Size = $_FILES['Foto']['size'];
+    $Location = "../assets/images/foto-ulasan/";
+
+    if (empty($InputNama) || empty($InputUlasan)) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Gagal!',
+                text: 'Silahkan Isi Data Dengan Lengkap!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+        return false;
+    }
+
+    if ($Check === 4) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Gagal!',
+                text: 'Silahkan Upload Foto!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+        return false;
+    }
+
+    $ValidExtension = ["jpg", "jpeg", "png"];
+    $GetName = explode(".", $InputFoto);
+    $GetExt = end($GetName);
+
+    if (!in_array($GetExt, $ValidExtension)) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Gagal!',
+                text: 'Silahkan Upload Foto (jpg, jpeg, png)!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+        return false;
+    }
+
+    if ($Size > 500000) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Gagal!',
+                text: 'Maksimal Size Foto 500kb!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+        return false;
+    }
+
+    $UniqidName = uniqid();
+    $UniqidName .= ".";
+    $UniqidName .= $GetExt;
+
+    move_uploaded_file($Resource, $Location . $UniqidName);
+
+    $InsertData = mysqli_query($conn, "INSERT INTO ulasan(IDUlasan, Nama, Ulasan, Foto) VALUES ('$InputKode', '$InputNama' , '$InputUlasan' , '$UniqidName')");
+
+    if ($InsertData) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Berhasil!',
+                text: 'Data Berhasil DiSimpan!',
+                icon: 'success',
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        window.setTimeout(function(){ 
+            window.location.replace('data-ulasan');
         },2000);
         </script>
         ";

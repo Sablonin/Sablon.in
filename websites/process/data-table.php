@@ -193,7 +193,7 @@ function LoginAkun()
                 })
             }
         </script>
-<?php
+    <?php
     }
 }
 
@@ -232,5 +232,52 @@ function Ulasan()
 {
     global $conn;
     $GetUlasan = mysqli_query($conn, "SELECT * FROM ulasan");
-    $JumlahUlasan = mysqli_num_rows($GetUlasan);
+    while ($Data = mysqli_fetch_array($GetUlasan)) { ?>
+        <tr>
+            <td><?= $Data['IDUlasan'] ?></td>
+            <td><img src='../assets/images/foto-ulasan/<?= $Data['Foto'] ?>' /></td>
+            <td><?= $Data['Nama'] ?></td>
+            <td><?= $Data['Ulasan'] ?></td>
+            <td>
+                <form method='POST'>
+                    <a href='update-ulasan?IDLogin=<?= $Data['IDUlasan'] ?>'>
+                        <button type='button' class='btn btn-social-icon btn-outline-warning'><i class='fa fa-pencil'></i>
+                        </button>
+                    </a>
+                    <button type='button' id='hapus-ulasan<?= $Data['IDUlasan'] ?>' class='btn btn-social-icon btn-outline-danger btn-sm'><i class='fa fa-trash'></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+        <script>
+            var button = document.querySelector('#hapus-ulasan<?= $Data['IDUlasan'] ?>');
+            button.onclick = function() {
+                Swal.fire({
+                    title: 'Peringatan!',
+                    text: "Apakah Anda Ingin Menghapus Data?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Confirm'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        document.location.href = 'process/delete-data?IDUlasan=<?= $Data['IDUlasan'] ?>';
+                    }
+                })
+            }
+        </script>
+<?php
+    }
+}
+
+function Gallery()
+{
+    global $conn;
+    $GetFoto = mysqli_query($conn, "SELECT * FROM ulasan");
+    while ($Data = mysqli_fetch_array($GetFoto)) {
+        echo "
+            <div class='item'>
+                <img src='../assets/images/foto-ulasan/$Data[Foto]' height='230'/>
+            </div>
+        ";
+    }
 }

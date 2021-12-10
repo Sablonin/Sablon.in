@@ -1,8 +1,9 @@
 <?php include 'components/top-link.php'; ?>
-<?php include 'process/session.php' ?>
-<?php include 'components/topbar.php'; ?>
-<?php include 'components/sidebar.php'; ?>
+<?php require 'process/session-login.php' ?>
 <?php require 'process/session-admin.php'; ?>
+<?php include 'components/navbar.php'; ?>
+<?php include 'components/sidebar.php'; ?>
+
 
 
 <!-- Start Content Wrapper -->
