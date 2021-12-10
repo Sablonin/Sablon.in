@@ -1,5 +1,5 @@
 <?php
-include '../configs/koneksi.php';
+require '../configs/koneksi.php';
 
 function GeneratePegawai()
 {
@@ -72,6 +72,21 @@ function GenerateLogin()
     $SetNumberKodeGT = (int) substr($GetMaxValue, 3);
     $SetNumberKodeGT++;
     $SetCharKodeGT = "LG";
+
+    $GenerateKodeGT = $SetCharKodeGT . sprintf("%03s", $SetNumberKodeGT);
+    echo $GenerateKodeGT;
+}
+
+function GenerateUlasan()
+{
+    global $conn;
+    $GetTableGT = mysqli_query($conn, "SELECT MAX(IDUlasan) AS KodeUN FROM ulasan");
+    $GetKodeGT = mysqli_fetch_array($GetTableGT);
+    $GetMaxValue = $GetKodeGT['KodeUN'];
+
+    $SetNumberKodeGT = (int) substr($GetMaxValue, 3);
+    $SetNumberKodeGT++;
+    $SetCharKodeGT = "UN";
 
     $GenerateKodeGT = $SetCharKodeGT . sprintf("%03s", $SetNumberKodeGT);
     echo $GenerateKodeGT;
