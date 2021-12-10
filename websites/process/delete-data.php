@@ -63,5 +63,32 @@ if ($IDPegawai = $_GET['IDPegawai']) {
     </script>
     ";
 }
+
+if ($IDUlasan = $_GET['IDUlasan']) {
+    $GetUlasan = mysqli_query($conn, "SELECT * FROM ulasan WHERE IDUlasan = '$IDUlasan'");
+    $GetFoto = mysqli_fetch_array($GetUlasan);
+    $DeleteFoto = unlink("../../assets/images/foto-ulasan/$GetFoto[Foto]");
+
+    if ($DeleteFoto) {
+        mysqli_query($conn, "DELETE FROM ulasan WHERE IDUlasan = '$IDUlasan'");
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Berhasil!',
+                text: 'Data Berhasil Dihapus!',
+                icon: 'success',
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        }, 10);
+        window.setTimeout(function() {
+            window.location.replace('../data-ulasan');
+        }, 2000);
+        </script>
+        ";
+    }
+}
 ?>
+
 <script src="../../assets/js/sweetalert2.all.min.js"></script>
