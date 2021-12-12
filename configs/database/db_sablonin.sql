@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Nov 2021 pada 15.14
+-- Waktu pembuatan: 12 Des 2021 pada 11.59
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 8.0.11
 
@@ -58,8 +58,17 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`IDBarang`, `Barang`, `IDKategori`, `Stok`) VALUES
-('BR001', 'Cat Biru', 'KG001', '11'),
-('BR002', 'Cat Kuning', 'KG001', '17');
+('BR001', 'Cat Biru', 'KG001', '26'),
+('BR002', 'Cat Merah', 'KG001', '38'),
+('BR003', 'Cat Kuning', 'KG001', '48'),
+('BR004', 'Cat Putih', 'KG001', '48'),
+('BR005', 'Cat Hitam', 'KG001', '38'),
+('BR006', 'Cat Orange', 'KG001', '48'),
+('BR007', 'Cat Ungu', 'KG001', '38'),
+('BR008', 'Cat Hijau', 'KG001', '48'),
+('BR009', 'Cotton', 'KG002', '38'),
+('BR010', 'Cotton Combat', 'KG002', '48'),
+('BR011', 'Cat Emas', 'KG001', '48');
 
 -- --------------------------------------------------------
 
@@ -118,7 +127,7 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`IDLogin`, `IDPegawai`, `Username`, `Password`, `IDLevel`) VALUES
-('LG001', 'PG001', 'admin1', 'admin1', 1);
+('LG009', 'PG004', 'admin0', 'admin0', 1);
 
 -- --------------------------------------------------------
 
@@ -133,16 +142,17 @@ CREATE TABLE `pegawai` (
   `Tanggal` date NOT NULL,
   `Alamat` varchar(50) NOT NULL,
   `Telepon` varchar(12) NOT NULL,
-  `IDJabatan` int(2) NOT NULL
+  `IDJabatan` int(2) NOT NULL,
+  `Foto` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `pegawai`
 --
 
-INSERT INTO `pegawai` (`IDPegawai`, `Nama`, `Gender`, `Tanggal`, `Alamat`, `Telepon`, `IDJabatan`) VALUES
-('PG001', 'Farul Ahmad Wananda', 'Laki-Laki', '2021-11-08', 'Bondowoso', '089682125741', 1),
-('PG002', 'Uciha Madara', 'Laki-Laki', '2021-11-03', 'Konoha', '089682125742', 2);
+INSERT INTO `pegawai` (`IDPegawai`, `Nama`, `Gender`, `Tanggal`, `Alamat`, `Telepon`, `IDJabatan`, `Foto`) VALUES
+('PG004', 'Farul Ahmad Wananda', 'Laki-Laki', '2002-04-04', 'Bondowoso', '089682125741', 1, '61b5d02973766.png'),
+('PG005', 'Administrator', 'Laki-Laki', '2021-12-01', 'Bondowoso', '000000000001', 1, '61b5d5723c4fd.jpg');
 
 -- --------------------------------------------------------
 
@@ -164,19 +174,17 @@ CREATE TABLE `riwayat` (
 --
 
 INSERT INTO `riwayat` (`IDRiwayat`, `Barang`, `Kategori`, `Stok`, `Status`, `Time`) VALUES
-('BR001', 'Cotton', 'KG001', 11, 'INSERT', '2021-11-27'),
-('BR001', 'Baju', 'KG002', 12, 'INSERT', '2021-11-27'),
-('BR001', 'Cat Biru', 'KG001', 16, 'INSERT', '2021-11-27'),
-('BR001', 'cat', 'KG001', 12, 'INSERT', '2021-11-27'),
-('BR001', 'cat', 'KG001', 12, 'INSERT', '2021-11-27'),
-('BR001', 'cat', 'KG001', 12, 'INSERT', '2021-11-27'),
-('BR001', 'cat', 'KG001', 16, 'INSERT', '2021-11-27'),
-('BR001', 'cat', 'KG001', 18, 'INSERT', '2021-11-27'),
-('BR001', 'cat', 'KG001', 12, 'INSERT', '2021-11-27'),
-('BR001', 'cat', 'KG001', 12, 'INSERT', '2021-11-27'),
-('BR001', 'cat', 'KG002', 12, 'INSERT', '2021-11-27'),
-('BR001', 'Cat Biru', 'KG001', 11, 'INSERT', '2021-11-28'),
-('BR002', 'Cat Kuning', 'KG001', 17, 'INSERT', '2021-11-28');
+('BR001', 'Cat Biru', 'KG001', 26, 'INSERT', '2021-12-12'),
+('BR002', 'Cat Merah', 'KG001', 38, 'INSERT', '2021-12-12'),
+('BR003', 'Cat Kuning', 'KG001', 48, 'INSERT', '2021-12-12'),
+('BR004', 'Cat Putih', 'KG001', 48, 'INSERT', '2021-12-12'),
+('BR005', 'Cat Hitam', 'KG001', 38, 'INSERT', '2021-12-12'),
+('BR006', 'Cat Orange', 'KG001', 48, 'INSERT', '2021-12-12'),
+('BR007', 'Cat Ungu', 'KG001', 38, 'INSERT', '2021-12-12'),
+('BR008', 'Cat Hijau', 'KG001', 48, 'INSERT', '2021-12-12'),
+('BR009', 'Cotton', 'KG002', 38, 'INSERT', '2021-12-12'),
+('BR010', 'Cotton Combat', 'KG002', 48, 'INSERT', '2021-12-12'),
+('BR011', 'Cat Emas', 'KG001', 48, 'INSERT', '2021-12-12');
 
 -- --------------------------------------------------------
 
@@ -185,10 +193,23 @@ INSERT INTO `riwayat` (`IDRiwayat`, `Barang`, `Kategori`, `Stok`, `Status`, `Tim
 --
 
 CREATE TABLE `ulasan` (
-  `IDUlasan` int(4) NOT NULL,
+  `IDUlasan` varchar(5) NOT NULL,
   `Nama` varchar(50) NOT NULL,
-  `Ulasan` varchar(150) NOT NULL
+  `Ulasan` varchar(255) NOT NULL,
+  `Foto` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `ulasan`
+--
+
+INSERT INTO `ulasan` (`IDUlasan`, `Nama`, `Ulasan`, `Foto`) VALUES
+('UN001', 'Perseus', 'Sangat menarik', '61b5cd211376e.jpg'),
+('UN002', 'Poseidon', 'Sangat bagus', '61b5cd34799ab.jpg'),
+('UN003', 'Hades', 'Menarik dan nyaman', '61b5cd49608c0.jpg'),
+('UN004', 'Athena', 'Nyaman dan enak untuk dipandang', '61b5cd5ae8097.jpg'),
+('UN005', 'Lucius', 'Enak dan nyaman dipakai', '61b5cd6de4c1a.jpg'),
+('UN006', 'Reyna', 'Hasil yang maksimal', '61b5cda513540.jpg');
 
 --
 -- Indexes for dumped tables
@@ -255,12 +276,6 @@ ALTER TABLE `akses`
 --
 ALTER TABLE `jabatan`
   MODIFY `IDJabatan` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT untuk tabel `ulasan`
---
-ALTER TABLE `ulasan`
-  MODIFY `IDUlasan` int(4) NOT NULL AUTO_INCREMENT;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
