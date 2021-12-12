@@ -29,8 +29,8 @@
         <div class="col-md-6 col-lg-3 grid-margin stretch-card">
             <div class="card bg-gradient-warning text-white text-center card-shadow-warning">
                 <div class="card-body">
-                    <h6 class="font-weight-normal">Data Pegawai</h6>
-                    <h2 class="mb-0"><?php JumlahPegawai() ?></h2>
+                    <h6 class="font-weight-normal">Data Ulasan</h6>
+                    <h2 class="mb-0"><?php JumlahUlasan() ?></h2>
                 </div>
             </div>
         </div>

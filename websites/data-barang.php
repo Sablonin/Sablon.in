@@ -37,7 +37,7 @@
                                     <th>Barang</th>
                                     <th>Kategori</th>
                                     <th>Stok</th>
-                                    <th>Action</th>
+                                    <th>Aksi</th>
                                 </tr>
                                 ';
                                 } else if ($IDLevel == 2) {

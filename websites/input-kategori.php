@@ -12,12 +12,12 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Tambah Kategori</h4>
-                    <?php include 'process/data-insert.php'; ?>
+                    <?php require 'process/data-insert.php'; ?>
                     <form class=" col-lg-6 mx-auto cmxform" method="POST">
                         <fieldset>
                             <div class="form-group">
                                 <label for="IDKategori">Kode Kategori</label>
-                                <?php include 'process/generate-code.php'; ?>
+                                <?php require 'process/generate-code.php'; ?>
                                 <input id="IDKategori" class="form-control" type="text" name="IDKategori" value="<?php echo GenerateKategori(); ?>" readonly>
                             </div>
                             <div class="form-group">

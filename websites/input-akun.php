@@ -18,7 +18,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Kode</label>
                                 <div class="col-sm-9">
-                                    <?php include 'process/generate-code.php' ?>
+                                    <?php require 'process/generate-code.php' ?>
                                     <input name="IDLogin" type="text" class="form-control" value="<?php echo GenerateLogin(); ?>" readonly />
                                 </div>
                             </div>

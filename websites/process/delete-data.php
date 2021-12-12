@@ -44,24 +44,29 @@ if ($IDLogin = $_GET['IDLogin']) {
 }
 
 if ($IDPegawai = $_GET['IDPegawai']) {
-    mysqli_query($conn, "DELETE FROM pegawai WHERE IDPegawai = '$IDPegawai'");
+    $GetPegawai = mysqli_query($conn, "SELECT * FROM pegawai WHERE IDPegawai = '$IDPegawai'");
+    $GetGambar = mysqli_fetch_array($GetPegawai);
+    $DeleteGambar = unlink("../../assets/images/foto-user/$GetGambar[Foto]");
 
-    echo "
-    <script>
-    setTimeout(function() {
-        Swal.fire({
-            title: 'Berhasil!',
-            text: 'Data Berhasil Dihapus!',
-            icon: 'success',
-            showCancelButton: false,
-            showConfirmButton: false
-        });
-    }, 10);
-    window.setTimeout(function() {
-        window.location.replace('../data-pegawai');
-    }, 2000);
-    </script>
-    ";
+    if ($DeleteGambar) {
+        mysqli_query($conn, "DELETE FROM pegawai WHERE IDPegawai = '$IDPegawai'");
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Berhasil!',
+                text: 'Data Berhasil Dihapus!',
+                icon: 'success',
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        }, 10);
+        window.setTimeout(function() {
+            window.location.replace('../data-pegawai');
+        }, 2000);
+        </script>
+        ";
+    }
 }
 
 if ($IDUlasan = $_GET['IDUlasan']) {

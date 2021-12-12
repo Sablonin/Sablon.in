@@ -12,10 +12,10 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Update Data Pegawai</h4>
-                <?php include 'process/data-update.php' ?>
-                <form action="" method="POST" class="form-sample">
+                <?php require 'process/data-update.php' ?>
+                <form action="" method="POST" enctype="multipart/form-data" class="form-sample">
                     <?php
-                    include '../configs/koneksi.php';
+                    require '../configs/koneksi.php';
                     $IDPegawai = $_GET['IDPegawai'];
                     $GetPegawai = mysqli_query($conn, "SELECT pegawai.*, jabatan.Jabatan FROM pegawai INNER JOIN jabatan ON pegawai.IDJabatan = jabatan.IDJabatan WHERE IDPegawai = '$IDPegawai'");
                     $DataPegawai = mysqli_fetch_array($GetPegawai);
@@ -86,6 +86,31 @@
                                 <label for="Jabatan" class="col-sm-3 col-form-label">Jabatan</label>
                                 <div class="col-sm-9">
                                     <input id="Jabatan" name="IDJabatan" type="text" class="form-control" value="<?php echo $DataPegawai['Jabatan']; ?>" readonly />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label for="">Update Foto (Opsional)</label>
+                                    <input type="file" name="Gambar" class="file-upload-default">
+                                    <div class="input-group col-xs-12">
+                                        <input type="text" class="form-control file-upload-info" disabled placeholder=".jpg / .jpeg / .png">
+                                        <span class="input-group-append">
+                                            <button class="file-upload-browse btn btn-primary" type="button">Pilih</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <input name="IDGambar" type="text" class="form-control" value="<?php echo $DataPegawai['Foto']; ?>" hidden />
                                 </div>
                             </div>
                         </div>

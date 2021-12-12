@@ -14,7 +14,7 @@
                 <?php require 'process/data-update.php'; ?>
                 <form method="POST" class="form-sample">
                     <?php
-                    include '../configs/koneksi.php';
+                    require '../configs/koneksi.php';
                     $IDLogin = $_GET['IDLogin'];
                     $GetAkun = mysqli_query($conn, "SELECT login.*, pegawai.Nama, akses.Akses FROM login INNER JOIN pegawai ON login.IDPegawai = pegawai.IDPegawai INNER JOIN akses ON login.IDLevel = akses.IDLevel WHERE IDLogin = '$IDLogin'");
                     $DataAkun = mysqli_fetch_array($GetAkun); ?>
@@ -63,7 +63,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-sm btn-primary" type="submit" name="update-akun">
+                    <button class="btn btn-sm btn-warning" type="submit" name="update-akun">
                         <i class="mdi mdi-account-plus"></i>Update
                     </button>
                     <a href="data-akun">

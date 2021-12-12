@@ -12,11 +12,11 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Tambah Barang</h4>
-                    <?php include 'process/data-insert.php'; ?>
+                    <?php require 'process/data-insert.php'; ?>
                     <form class=" col-lg-6 mx-auto cmxform" method="POST" action="">
                         <fieldset>
                             <div class="form-group">
-                                <?php include 'process/generate-code.php'; ?>
+                                <?php require 'process/generate-code.php'; ?>
                                 <label for="IDBarang">Kode Barang</label>
                                 <input id="IDBarang" class="form-control" type="text" name="IDBarang" value="<?php echo GenerateBarang(); ?>" readonly>
                             </div>

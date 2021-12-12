@@ -1,51 +1,6 @@
 <?php
 require '../configs/koneksi.php';
 
-if (isset($_POST['tambah-pegawai'])) {
-    $IDPegawai = htmlspecialchars(trim($_POST['IDPegawai']));
-    $Nama = htmlspecialchars(trim($_POST['Nama']));
-    $Gender = htmlspecialchars(trim($_POST['Gender']));
-    $Tanggal = htmlspecialchars(trim($_POST['Tanggal']));
-    $Alamat = htmlspecialchars(trim($_POST['Alamat']));
-    $Telepon = htmlspecialchars(trim($_POST['Telepon']));
-    $IDJabatan = htmlspecialchars(trim($_POST['IDJabatan']));
-
-
-    if (empty($IDPegawai) || empty($Nama) || empty($Gender) || empty($Tanggal) || empty($Alamat) || empty($Telepon) || empty($IDJabatan)) {
-        echo "
-        <script>
-        setTimeout(function() {
-            Swal.fire({
-                title: 'Gagal!',
-                text: 'Silahkan Isi Data Dengan Lengkap!',
-                icon: 'error',
-                timer: 2000,
-                showCancelButton: false,
-                showConfirmButton: false
-            });
-        });  
-        </script>
-        ";
-    } else {
-        mysqli_query($conn, "INSERT INTO pegawai (IDPegawai, Nama, Gender, Tanggal, Alamat, Telepon, IDJabatan) VALUES ('$IDPegawai', '$Nama', '$Gender', '$Tanggal', '$Alamat', '$Telepon', '$IDJabatan')");
-        echo "
-        <script>
-        setTimeout(function() {
-            Swal.fire({
-                title: 'Berhasil!',
-                text: 'Data Berhasil DiSimpan!',
-                icon: 'success',
-                showCancelButton: false,
-                showConfirmButton: false
-            });
-        });  
-        window.setTimeout(function(){ 
-            window.location.replace('data-pegawai');
-        },2000);
-        </script>
-        ";
-    }
-}
 
 if (isset($_POST['tambah-barang'])) {
     $IDBarang = htmlspecialchars(trim($_POST['IDBarang']));
@@ -298,6 +253,127 @@ if (isset($_POST['tambah-ulasan'])) {
         });  
         window.setTimeout(function(){ 
             window.location.replace('data-ulasan');
+        },2000);
+        </script>
+        ";
+    }
+}
+
+if (isset($_POST['tambah-pegawai'])) {
+    $IDPegawai = htmlspecialchars(trim($_POST['IDPegawai']));
+    $Nama = htmlspecialchars(trim($_POST['Nama']));
+    $Gender = htmlspecialchars(trim($_POST['Gender']));
+    $Tanggal = htmlspecialchars(trim($_POST['Tanggal']));
+    $Alamat = htmlspecialchars(trim($_POST['Alamat']));
+    $Telepon = htmlspecialchars(trim($_POST['Telepon']));
+    $IDJabatan = htmlspecialchars(trim($_POST['IDJabatan']));
+
+    $InputGambar = strtolower($_FILES['Gambar']['name']);
+    $SetResource = $_FILES['Gambar']['tmp_name'];
+    $SetCheck = $_FILES['Gambar']['error'];
+    $SetSize = $_FILES['Gambar']['size'];
+    $SetLocation = "../assets/images/foto-user/";
+
+
+    if (empty($Nama) || empty($Gender) || empty($Tanggal) || empty($Alamat) || empty($Telepon) || empty($IDJabatan)) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Gagal!',
+                text: 'Silahkan Isi Data Dengan Lengkap!',
+                icon: 'error',
+                timer: 3000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+        return false;
+    }
+
+    if ($SetCheck === 4) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Gagal!',
+                text: 'Silahkan Upload Foto!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+        return false;
+    }
+
+    $ValidExtension = ["jpg", "jpeg", "png"];
+    $GetName = explode(".", $InputGambar);
+    $GetExt = end($GetName);
+
+    if (!in_array($GetExt, $ValidExtension)) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Gagal!',
+                text: 'Silahkan Upload Foto (jpg, jpeg, png)!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+        return false;
+    }
+
+    if ($SetSize > 500000) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Gagal!',
+                text: 'Maksimal Size Foto 500kb!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+        return false;
+    }
+
+    $UniqidName = uniqid();
+    $UniqidName .= ".";
+    $UniqidName .= $GetExt;
+
+    move_uploaded_file($SetResource, $SetLocation . $UniqidName);
+
+
+    $InsertPegawai = mysqli_query($conn, "INSERT INTO pegawai (IDPegawai, Nama, Gender, Tanggal, Alamat, Telepon, IDJabatan, Foto) VALUES ('$IDPegawai', '$Nama', '$Gender', '$Tanggal', '$Alamat', '$Telepon', '$IDJabatan', '$UniqidName')");
+
+    if ($InsertPegawai) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Berhasil!',
+                text: 'Data Berhasil DiSimpan!',
+                icon: 'success',
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        window.setTimeout(function(){ 
+            window.location.replace('data-pegawai');
         },2000);
         </script>
         ";

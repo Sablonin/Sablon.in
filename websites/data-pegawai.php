@@ -26,11 +26,12 @@
                             <thead>
                                 <tr>
                                     <th>Kode</th>
+                                    <th>Foto</th>
                                     <th>Nama</th>
                                     <th>Jenis Kelamin</th>
                                     <th>Telepon</th>
                                     <th>Jabatan</th>
-                                    <th>Action</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>

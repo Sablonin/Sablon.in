@@ -12,13 +12,12 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Tambah Ulasan</h4>
-                    <?php include 'process/data-insert.php'; ?>
+                    <?php require 'process/data-insert.php'; ?>
                     <form class=" col-lg-6 mx-auto cmxform" method="POST" enctype="multipart/form-data" action="">
                         <fieldset>
                             <div class="form-group">
-                                <label>Kode Ulasan</label>
-                                <?php include 'process/generate-code.php'; ?>
-                                <input class="form-control" type="text" name="IDUlasan" value="<?php echo GenerateUlasan(); ?>" readonly>
+                                <?php require 'process/generate-code.php'; ?>
+                                <input class="form-control" type="text" name="IDUlasan" value="<?php echo GenerateUlasan(); ?>" hidden>
                             </div>
                             <div class="form-group">
                                 <label for="Nama">Nama</label>
@@ -26,7 +25,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="Ulasan">Ulasan</label>
-                                <textarea id="Ulasan" class="form-control" name="Ulasan" required></textarea>
+                                <textarea id="Ulasan" class="form-control" rows="10" cols="120" maxlength="255" name="Ulasan" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label>Upload Foto</label>

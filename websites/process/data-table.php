@@ -102,6 +102,7 @@ function Pegawai()
     while ($Data = mysqli_fetch_array($GetPegawai)) { ?>
         <tr>
             <td><?= $Data['IDPegawai'] ?></td>
+            <td><img src='../assets/images/foto-user/<?= $Data['Foto'] ?>' /></td>
             <td><?= $Data['Nama'] ?></td>
             <td><?= $Data['Gender'] ?></td>
             <td><?= $Data['Telepon'] ?></td>
@@ -143,6 +144,7 @@ function Pegawai()
     <?php
     }
 }
+
 
 function JumlahPegawai()
 {
@@ -240,7 +242,7 @@ function Ulasan()
             <td><?= $Data['Ulasan'] ?></td>
             <td>
                 <form method='POST'>
-                    <a href='update-ulasan?IDLogin=<?= $Data['IDUlasan'] ?>'>
+                    <a href='update-ulasan?IDUlasan=<?= $Data['IDUlasan'] ?>'>
                         <button type='button' class='btn btn-social-icon btn-outline-warning'><i class='fa fa-pencil'></i>
                         </button>
                     </a>
@@ -267,6 +269,16 @@ function Ulasan()
         </script>
 <?php
     }
+}
+
+function JumlahUlasan()
+{
+    global $conn;
+    $GetUlasan = mysqli_query($conn, "SELECT * FROM ulasan");
+    $JumlahUlasan = mysqli_num_rows($GetUlasan);
+    echo "
+    $JumlahUlasan
+    ";
 }
 
 function Gallery()

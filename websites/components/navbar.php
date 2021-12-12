@@ -11,7 +11,20 @@
         <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item nav-profile dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-                    <img src="../assets/images/foto-user/face5.jpg" alt="profile" />
+                    <?php
+                    require '../configs/koneksi.php';
+                    $IDPegawai = $_SESSION['IDPegawai'];
+
+                    $GetDataFoto = mysqli_query($conn, "SELECT * FROM pegawai where IDPegawai = '$IDPegawai'");
+                    while ($Data = mysqli_fetch_array($GetDataFoto)) {
+                        echo "
+                            <div class='item'>
+                                <img src='../assets/images/foto-user/$Data[Foto]'/>
+                            </div>
+                        ";
+                    }
+                    ?>
+
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                     <div class="dropdown-divider"></div>

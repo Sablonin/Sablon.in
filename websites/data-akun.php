@@ -20,8 +20,8 @@
                                     <th>Nama</th>
                                     <th>Username</th>
                                     <th>Password</th>
-                                    <th>Authority</th>
-                                    <th>Action</th>
+                                    <th>Hak Akses</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
