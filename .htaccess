@@ -5,3 +5,5 @@
    RewriteRule ^(.*)$ $1.php
 </IfModule>
 ErrorDocument 404 http://localhost/sablon.in/websites/error-404
+ErrorDocument 500 http://localhost/sablon.in/websites/error-500
+php_flag output_buffering on

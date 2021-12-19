@@ -27,7 +27,7 @@
                             <div class="form-group row">
                                 <label for="IDLevel" class="col-sm-3 col-form-label">Hak Akses</label>
                                 <div class="col-sm-9">
-                                    <select id="IDLevel" name="IDLevel" class="form-control" required>
+                                    <select id="IDLevel" name="IDLevel" class="form-control">
                                         <option value=""></option>
                                         <?php
                                         include 'process/data-option.php';
@@ -42,7 +42,7 @@
                             <div class="form-group row">
                                 <label for="IDPegawai" class="col-sm-3 col-form-label">Nama Pegawai</label>
                                 <div class="col-sm-9">
-                                    <select name="IDPegawai" id="IDPegawai" class="form-control" required>
+                                    <select name="IDPegawai" id="IDPegawai" class="form-control">
                                         <option value=""></option>
                                         <?php
                                         AmbilNama(); ?>
@@ -54,7 +54,7 @@
                             <div class="form-group row">
                                 <label for="Password" class="col-sm-3 col-form-label">Password</label>
                                 <div class="col-sm-9">
-                                    <input id="Password" name="Password" type="password" class="form-control" minlength="2" maxlength="12" onChange="onChange()" placeholder="Password" required />
+                                    <input id="Password" name="Password" type="password" class="form-control" minlength="2" maxlength="12" onChange="onChange()" placeholder="Password" />
                                 </div>
                             </div>
                         </div>
@@ -64,7 +64,7 @@
                             <div class="form-group row">
                                 <label for="Username" class="col-sm-3 col-form-label">Username</label>
                                 <div class="col-sm-9">
-                                    <input id="Username" name="Username" type="text" class="form-control" oninput="this.value = this.value.replace(/[^a-zA-z0-9]/, '')" minlength="6" maxlength="12" placeholder="Username" required />
+                                    <input id="Username" name="Username" type="text" class="form-control" oninput="this.value = this.value.replace(/[^a-zA-z0-9]/, '')" minlength="6" maxlength="12" placeholder="Username" />
                                 </div>
                             </div>
                         </div>
@@ -72,7 +72,7 @@
                             <div class="form-group row">
                                 <label for="Confirm" class="col-sm-3 col-form-label">Confirm Password</label>
                                 <div class="col-sm-9">
-                                    <input id="Confirm" name="Confirm" type="password" class="form-control" minlength="2" maxlength="12" onChange="onChange()" placeholder="Confirm Password" required />
+                                    <input id="Confirm" name="Confirm" type="password" class="form-control" minlength="2" maxlength="12" onChange="onChange()" placeholder="Confirm Password" />
                                 </div>
                             </div>
                         </div>
@@ -96,7 +96,7 @@
         if (confirm.value === password.value) {
             confirm.setCustomValidity('');
         } else {
-            confirm.setCustomValidity('Passwords do not match');
+            confirm.setCustomValidity('Password Tidak Sesuai');
         }
     }
 </script>

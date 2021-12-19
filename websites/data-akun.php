@@ -16,7 +16,6 @@
                         <table id="order-listing" class="table">
                             <thead>
                                 <tr>
-                                    <th>Kode</th>
                                     <th>Nama</th>
                                     <th>Username</th>
                                     <th>Password</th>

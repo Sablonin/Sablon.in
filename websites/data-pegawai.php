@@ -25,11 +25,9 @@
                         <table id="order-listing" class="table">
                             <thead>
                                 <tr>
-                                    <th>Kode</th>
                                     <th>Foto</th>
                                     <th>Nama</th>
                                     <th>Jenis Kelamin</th>
-                                    <th>Telepon</th>
                                     <th>Jabatan</th>
                                     <th>Aksi</th>
                                 </tr>

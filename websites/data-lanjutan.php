@@ -33,7 +33,7 @@
                             ?>
                         </div>
                         <a href="data-pegawai">
-                            <button type="button" class="btn btn-primary btn-block">Kembali</button>
+                            <button type="button" class="btn btn-secondary btn-block">Kembali</button>
                         </a>
                     </div>
                     <div class="col-lg-8">

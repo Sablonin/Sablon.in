@@ -1,4 +1,14 @@
 <?php include 'components/top-link.php'; ?>
+<?php session_start();
+error_reporting(0);
+if ($_SESSION['Username']) {
+  echo "
+        <script>
+        document.location='dashboard';
+        </script>
+    ";
+}
+?>
 
 <div class="container-fluid page-body-wrapper full-page-wrapper">
   <div class="content-wrapper d-flex align-items-stretch auth auth-img-bg">

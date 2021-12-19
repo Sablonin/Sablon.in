@@ -21,11 +21,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="Nama">Nama</label>
-                                <input id="Nama" class="form-control" type="text" name="Nama" oninput="this.value = this.value.replace(/[^a-zA-Z, ]/, '')" minlength=" 4" maxlength="50" required>
+                                <input id="Nama" class="form-control" type="text" name="Nama" oninput="this.value = this.value.replace(/[^a-zA-Z, ]/, '')" minlength=" 4" maxlength="50">
                             </div>
                             <div class="form-group">
                                 <label for="Ulasan">Ulasan</label>
-                                <textarea id="Ulasan" class="form-control" rows="10" cols="120" maxlength="255" name="Ulasan" required></textarea>
+                                <textarea id="Ulasan" class="form-control" rows="10" cols="120" maxlength="255" name="Ulasan"></textarea>
                             </div>
                             <div class="form-group">
                                 <label>Upload Foto</label>

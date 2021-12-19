@@ -101,11 +101,9 @@ function Pegawai()
     $GetPegawai = mysqli_query($conn, "SELECT pegawai.*, jabatan.Jabatan FROM pegawai INNER JOIN jabatan ON pegawai.IDJabatan = jabatan.IDJabatan");
     while ($Data = mysqli_fetch_array($GetPegawai)) { ?>
         <tr>
-            <td><?= $Data['IDPegawai'] ?></td>
             <td><img src='../assets/images/foto-user/<?= $Data['Foto'] ?>' /></td>
             <td><?= $Data['Nama'] ?></td>
             <td><?= $Data['Gender'] ?></td>
-            <td><?= $Data['Telepon'] ?></td>
             <td><?= $Data['Jabatan'] ?></td>
             <td>
                 <form action="POST">
@@ -163,7 +161,6 @@ function LoginAkun()
     $GetAkun = mysqli_query($conn, "SELECT login.*, pegawai.Nama, akses.Akses FROM login INNER JOIN pegawai ON login.IDPegawai = pegawai.IDPegawai INNER JOIN akses ON login.IDLevel = akses.IDLevel");
     while ($Data = mysqli_fetch_array($GetAkun)) { ?>
         <tr>
-            <td><?= $Data['IDLogin'] ?></td>
             <td><?= $Data['Nama'] ?></td>
             <td><?= $Data['Username'] ?></td>
             <td><?= $Data['Password'] ?></td>
@@ -281,15 +278,39 @@ function JumlahUlasan()
     ";
 }
 
-function Gallery()
+function UlasanActivity()
 {
     global $conn;
-    $GetFoto = mysqli_query($conn, "SELECT * FROM ulasan");
-    while ($Data = mysqli_fetch_array($GetFoto)) {
+    $GetData = mysqli_query($conn, "SELECT * FROM ulasan ORDER BY IDUlasan DESC LIMIT 5");
+    while ($Data = mysqli_fetch_array($GetData)) {
         echo "
-            <div class='item'>
-                <img src='../assets/images/foto-ulasan/$Data[Foto]' height='230'/>
-            </div>
+            <div class='list d-flex align-items-center border-bottom pb-3 mt-3'>
+                    <img class='img-sm rounded-circle' src='../assets/images/foto-ulasan/$Data[Foto]' alt=''>
+                <div class='wrapper w-100 ml-3'>
+                    <p><b>$Data[Nama]</b> Telah Memberikan Ulasan</p>
+                </div>
+            </div>       
         ";
     }
 }
+
+function BarangActivity()
+{
+    global $conn;
+    $GetData =  mysqli_query($conn, "SELECT * FROM barang ORDER BY IDBarang DESC LIMIT 5");
+    while ($Data = mysqli_fetch_array($GetData)) {
+        echo "
+            <div class='list d-flex align-items-center border-bottom pb-3 mt-3'>
+                <div class='wrapper w-100 ml-3 mt-3'>
+                    <p><b>$Data[Barang]</b> Telah Di Perbaharui</p>
+                </div>
+            </div>       
+        ";
+    }
+}
+
+
+// function Activity() {
+//     global $conn;
+//     $GetFoto = mysqli_q
+// }

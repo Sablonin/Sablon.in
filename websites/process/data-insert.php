@@ -8,6 +8,8 @@ if (isset($_POST['tambah-barang'])) {
     $IDKategori = htmlspecialchars(trim($_POST['IDKategori']));
     $Stok = htmlspecialchars(trim($_POST['Stok']));
 
+    $cekBarang = mysqli_query($conn, "SELECT Barang FROM barang WHERE Barang = '$Barang'");
+
     if (empty($IDBarang) || empty($Barang) || empty($IDKategori) || empty($Stok)) {
         echo "
         <script>
@@ -15,6 +17,21 @@ if (isset($_POST['tambah-barang'])) {
             Swal.fire({
                 title: 'Gagal!',
                 text: 'Silahkan Isi Data Dengan Lengkap!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+    } else if (mysqli_num_rows($cekBarang) != 0) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Gagal!',
+                text: 'Data Telah Terdaftar Didalam Sistem!',
                 icon: 'error',
                 timer: 2000,
                 showCancelButton: false,
@@ -49,6 +66,8 @@ if (isset($_POST['tambah-kategori'])) {
     $IDKategori = htmlspecialchars(trim($_POST['IDKategori']));
     $Kategori = htmlspecialchars(trim($_POST['Kategori']));
 
+    $cekKategori = mysqli_query($conn, "SELECT Kategori FROM kategori WHERE Kategori = '$Kategori'");
+
     if (empty($IDKategori) || empty($Kategori)) {
         echo "
         <script>
@@ -56,6 +75,21 @@ if (isset($_POST['tambah-kategori'])) {
             Swal.fire({
                 title: 'Gagal!',
                 text: 'Silahkan Isi Data Dengan Lengkap!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+    } else if (mysqli_num_rows($cekKategori) != 0) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Gagal!',
+                text: 'Data Telah Terdaftar Didalam Sistem!',
                 icon: 'error',
                 timer: 2000,
                 showCancelButton: false,
@@ -79,66 +113,6 @@ if (isset($_POST['tambah-kategori'])) {
         });  
         window.setTimeout(function(){ 
             window.location.replace('data-kategori');
-        },2000);
-        </script>
-        ";
-    }
-}
-
-if (isset($_POST['tambah-akun'])) {
-    $IDLogin = htmlspecialchars(trim($_POST['IDLogin']));
-    $IDPegawai = htmlspecialchars(trim($_POST['IDPegawai']));
-    $Username = htmlspecialchars(trim($_POST['Username']));
-    $Password = htmlspecialchars(trim($_POST['Password']));
-    $IDLevel = htmlspecialchars(trim($_POST['IDLevel']));
-
-    $cek = mysqli_query($conn, "SELECT Username FROM login WHERE Username = '$Username'");
-
-    if (empty($Username) || empty($Password)) {
-        echo "
-        <script>
-        setTimeout(function() {
-            Swal.fire({
-                title: 'Gagal!',
-                text: 'Silahkan Isi Data Dengan Lengkap!',
-                icon: 'error',
-                timer: 2000,
-                showCancelButton: false,
-                showConfirmButton: false
-            });
-        });  
-        </script>
-        ";
-    } else if (mysqli_num_rows($cek) != 0) {
-        echo "
-        <script>
-        setTimeout(function() {
-            Swal.fire({
-                title: 'Gagal!',
-                text: 'Username Telah Dipakai!',
-                icon: 'error',
-                timer: 2000,
-                showCancelButton: false,
-                showConfirmButton: false
-            });
-        });  
-        </script>
-        ";
-    } else {
-        mysqli_query($conn, "INSERT INTO login (IDLogin, IDPegawai, Username, Password, IDLevel) VALUES ('$IDLogin', '$IDPegawai', '$Username', '$Password', '$IDLevel')");
-        echo "
-        <script>
-        setTimeout(function() {
-            Swal.fire({
-                title: 'Berhasil!',
-                text: 'Registrasi Berhasil!',
-                icon: 'success',
-                showCancelButton: false,
-                showConfirmButton: false
-            });
-        });  
-        window.setTimeout(function(){ 
-            window.location.replace('data-akun');
         },2000);
         </script>
         ";
@@ -274,6 +248,7 @@ if (isset($_POST['tambah-pegawai'])) {
     $SetSize = $_FILES['Gambar']['size'];
     $SetLocation = "../assets/images/foto-user/";
 
+    $cekNama = mysqli_query($conn, "SELECT Nama FROM pegawai WHERE Nama = '$Nama'");
 
     if (empty($Nama) || empty($Gender) || empty($Tanggal) || empty($Alamat) || empty($Telepon) || empty($IDJabatan)) {
         echo "
@@ -284,6 +259,24 @@ if (isset($_POST['tambah-pegawai'])) {
                 text: 'Silahkan Isi Data Dengan Lengkap!',
                 icon: 'error',
                 timer: 3000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+        return false;
+    }
+
+    if (mysqli_num_rows($cekNama) != 0) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Gagal!',
+                text: 'Nama Telah Dipakai!',
+                icon: 'error',
+                timer: 2000,
                 showCancelButton: false,
                 showConfirmButton: false
             });
@@ -374,6 +367,66 @@ if (isset($_POST['tambah-pegawai'])) {
         });  
         window.setTimeout(function(){ 
             window.location.replace('data-pegawai');
+        },2000);
+        </script>
+        ";
+    }
+}
+
+if (isset($_POST['tambah-akun'])) {
+    $IDLogin = htmlspecialchars(trim($_POST['IDLogin']));
+    $IDPegawai = htmlspecialchars(trim($_POST['IDPegawai']));
+    $Username = htmlspecialchars(trim($_POST['Username']));
+    $Password = htmlspecialchars(trim($_POST['Password']));
+    $IDLevel = htmlspecialchars(trim($_POST['IDLevel']));
+
+    $cekUsername = mysqli_query($conn, "SELECT Username FROM login WHERE Username = '$Username'");
+
+    if (empty($Username) || empty($Password)) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Gagal!',
+                text: 'Silahkan Isi Data Dengan Lengkap!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+    } else if (mysqli_num_rows($cekUsername) != 0) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Gagal!',
+                text: 'Username Telah Dipakai!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+    } else {
+        mysqli_query($conn, "INSERT INTO login (IDLogin, IDPegawai, Username, Password, IDLevel) VALUES ('$IDLogin', '$IDPegawai', '$Username', '$Password', '$IDLevel')");
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Berhasil!',
+                text: 'Registrasi Berhasil!',
+                icon: 'success',
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        window.setTimeout(function(){ 
+            window.location.replace('data-akun');
         },2000);
         </script>
         ";
