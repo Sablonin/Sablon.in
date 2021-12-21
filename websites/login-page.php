@@ -10,7 +10,7 @@ if ($_SESSION['Username']) {
 }
 ?>
 
-<div class="container-fluid page-body-wrapper full-page-wrapper">
+<div class="container-fluid page-body-wrapper full-page-wrapper animated fadeIn">
   <div class="content-wrapper d-flex align-items-stretch auth auth-img-bg">
     <div class="row flex-grow">
       <div class="col-lg-6 d-flex align-items-center justify-content-center">

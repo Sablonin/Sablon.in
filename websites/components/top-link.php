@@ -21,6 +21,7 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="../assets/css/vertical-layout-light/style.css">
     <link rel="stylesheet" href="../assets/css/sweetalert2.min.css">
+    <link rel="stylesheet" href="../assets/vendors/css/animate.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="../assets/images/logo/sablon1.png" />
 
