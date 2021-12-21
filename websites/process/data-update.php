@@ -24,7 +24,67 @@ if (isset($_POST['update-pegawai'])) {
     $UniqidName .= ".";
     $UniqidName .= $GetExt;
 
-    if ($_FILES['Gambar']['error'] === 4) {
+    if (empty($Nama) || empty($Alamat) || empty($Telepon)) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Peringatan!',
+                text: 'Silahkan Input Data Dengan Lengkap!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+    } else if (!preg_match("/^[a-zA-Z ]*$/", $Nama)) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Peringatan!',
+                text: 'Silahkan Input Nama Dengan Benar!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+    } else if (!preg_match("/^[a-zA-Z ]*$/", $Alamat)) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Peringatan!',
+                text: 'Silahkan Input Alamat Dengan Benar!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+    } else if (!preg_match("/^[0-9]*$/", $Telepon)) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Peringatan!',
+                text: 'Silahkan Input Telepon Dengan Benar!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+    } else if ($_FILES['Gambar']['error'] === 4) {
         mysqli_query($conn, "UPDATE pegawai SET Nama = '$Nama', Gender = '$Gender', Tanggal = '$Tanggal', Alamat = '$Alamat', Telepon = '$Telepon', Foto = '$NoUpdate' WHERE IDPegawai = '$IDPegawai'");
         echo "
         <script>
@@ -48,7 +108,7 @@ if (isset($_POST['update-pegawai'])) {
             <script>
             setTimeout(function() {
                 Swal.fire({
-                    title: 'Gagal!',
+                    title: 'Peringatan!',
                     text: 'Silahkan Upload Foto (jpg, jpeg, png)!',
                     icon: 'error',
                     timer: 2000,
@@ -63,7 +123,7 @@ if (isset($_POST['update-pegawai'])) {
             <script>
             setTimeout(function() {
                 Swal.fire({
-                    title: 'Gagal!',
+                    title: 'Peringatan!',
                     text: 'Maksimal Size Foto 500kb!',
                     icon: 'error',
                     timer: 2000,
@@ -107,13 +167,43 @@ if (isset($_POST['update-barang'])) {
     $IDKategori = htmlspecialchars(trim($_POST['IDKategori']));
     $Stok = htmlspecialchars(trim($_POST['Stok']));
 
-    if (empty($Barang) || empty($IDKategori) || empty($Stok)) {
+    if (empty($Barang) || empty($Stok)) {
         echo "
         <script>
         setTimeout(function() {
             Swal.fire({
-                title: 'Gagal!',
-                text: 'Silahkan Isi Data Dengan Lengkap!',
+                title: 'Peringatan!',
+                text: 'Silahkan Input Data Dengan Lengkap!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+    } else if (!preg_match("/^[a-zA-Z ]*$/", $Barang)) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Peringatan!',
+                text: 'Silahkan Input Barang Dengan Benar!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+    } else if (!preg_match("/^[0-9]*$/", $Stok)) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Peringatan!',
+                text: 'Silahkan Input Stok Dengan Benar!',
                 icon: 'error',
                 timer: 2000,
                 showCancelButton: false,
@@ -154,7 +244,7 @@ if (isset($_POST['update-akun'])) {
         setTimeout(function() {
             Swal.fire({
                 title: 'Peringatan!',
-                text: 'Silahkan Isi Password!',
+                text: 'Silahkan Input Password!',
                 icon: 'error',
                 timer: 2000,
                 showCancelButton: false,
@@ -169,8 +259,8 @@ if (isset($_POST['update-akun'])) {
         <script>
         setTimeout(function() {
             Swal.fire({
-                title: 'Peringatan!',
-                text: 'Update Berhasil!',
+                title: 'Berhasil!',
+                text: 'Data Berhasil DiUpdate!',
                 icon: 'success',
                 showCancelButton: false,
                 showConfirmButton: false
@@ -204,7 +294,37 @@ if (isset($_POST['update-ulasan'])) {
     $UniqName .= ".";
     $UniqName .= $GetExt;
 
-    if ($_FILES['Foto']['error'] === 4) {
+    if (empty($Nama) || empty($Ulasan)) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Peringatan!',
+                text: 'Silahkan Input Data Dengan Lengkap!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+    } else if (!preg_match("/^[a-zA-Z ]*$/", $Nama)) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Peringatan!',
+                text: 'Silahkan Input Nama Dengan Benar!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+    } else if ($_FILES['Foto']['error'] === 4) {
         mysqli_query($conn, "UPDATE ulasan SET Nama = '$Nama', Ulasan = '$Ulasan', Foto = '$NoUpdate' WHERE IDUlasan = '$IDUlasan'");
         echo "
         <script>
@@ -228,7 +348,7 @@ if (isset($_POST['update-ulasan'])) {
             <script>
             setTimeout(function() {
                 Swal.fire({
-                    title: 'Gagal!',
+                    title: 'Peringatan!',
                     text: 'Silahkan Upload Foto (jpg, jpeg, png)!',
                     icon: 'error',
                     timer: 2000,
@@ -243,7 +363,7 @@ if (isset($_POST['update-ulasan'])) {
             <script>
             setTimeout(function() {
                 Swal.fire({
-                    title: 'Gagal!',
+                    title: 'Peringatan!',
                     text: 'Maksimal Size Foto 500kb!',
                     icon: 'error',
                     timer: 2000,

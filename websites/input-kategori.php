@@ -22,7 +22,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="Kategori">Kategori</label>
-                                <input id="Kategori" class="form-control" type="text" name="Kategori" oninput="this.value = this.value.replace(/[^a-zA-Z, ]/, '')" minlength="2" maxlength="35">
+                                <input id="Kategori" class="form-control" type="text" name="Kategori" oninput="this.value = this.value.replace(/[^a-zA-Z ]/, '')" minlength="2" maxlength="35" placeholder="Contoh : Cat Warna">
                             </div>
                             <button type="submit" name="tambah-kategori" class="btn btn-sm btn-primary">
                                 <i class="mdi mdi-bookmark-plus-outline"></i>Tambah

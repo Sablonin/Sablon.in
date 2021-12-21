@@ -34,7 +34,7 @@
                             <div class="form-group row">
                                 <label for="Nama" class="col-sm-3 col-form-label">Nama Pegawai</label>
                                 <div class="col-sm-9">
-                                    <input id="Nama" name="Nama" type="text" class="form-control" oninput="this.value = this.value.replace(/[^a-zA-Z, ]/, '')" minlength="2" maxlength="50" value="<?php echo $DataPegawai['Nama']; ?>" required />
+                                    <input id="Nama" name="Nama" type="text" class="form-control" oninput="this.value = this.value.replace(/[^a-zA-Z ]/, '')" minlength="2" maxlength="50" value="<?php echo $DataPegawai['Nama']; ?>" required />
                                 </div>
                             </div>
                         </div>
@@ -59,7 +59,7 @@
                             <div class="form-group row">
                                 <label for="Alamat" class="col-sm-3 col-form-label">Alamat</label>
                                 <div class="col-sm-9">
-                                    <input id="Alamat" name="Alamat" type="text" class="form-control" oninput="this.value = this.value.replace(/[^a-zA-Z, ]/, '')" minlength="2" maxlength="50" value="<?php echo $DataPegawai['Alamat']; ?>" required />
+                                    <input id="Alamat" name="Alamat" type="text" class="form-control" oninput="this.value = this.value.replace(/[^a-zA-Z ]/, '')" minlength="2" maxlength="50" value="<?php echo $DataPegawai['Alamat']; ?>" required />
                                 </div>
                             </div>
                         </div>
@@ -77,7 +77,7 @@
                             <div class="form-group row">
                                 <label for="Telepon" class="col-sm-3 col-form-label">Telepon</label>
                                 <div class="col-sm-9">
-                                    <input id="Telepon" name="Telepon" type="text" class="form-control" oninput="this.value = this.value.replace(/[^0-9.]/g, '')" onKeyPress="if(this.value.length==12) return false;" value="<?php echo $DataPegawai['Telepon'] ?>" required />
+                                    <input id="Telepon" name="Telepon" type="text" class="form-control" oninput="this.value = this.value.replace(/[^0-9]/g, '')" onKeyPress="if(this.value.length==12) return false;" value="<?php echo $DataPegawai['Telepon'] ?>" />
                                 </div>
                             </div>
                         </div>
@@ -97,7 +97,7 @@
                                     <label for="">Update Foto (Opsional)</label>
                                     <input type="file" name="Gambar" class="file-upload-default">
                                     <div class="input-group col-xs-12">
-                                        <input type="text" class="form-control file-upload-info" disabled placeholder=".jpg / .jpeg / .png">
+                                        <input type="text" class="form-control file-upload-info" disabled placeholder="Contoh File : .jpg / .jpeg / .png">
                                         <span class="input-group-append">
                                             <button class="file-upload-browse btn btn-primary" type="button">Pilih</button>
                                         </span>

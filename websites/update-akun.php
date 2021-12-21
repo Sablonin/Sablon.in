@@ -50,7 +50,7 @@
                             <div class="form-group row">
                                 <label for="Username" class="col-sm-3 col-form-label">Username</label>
                                 <div class="col-sm-9">
-                                    <input id="Username" name="Username" type="text" class="form-control" oninput="this.value = this.value.replace(/[^a-zA-z0-9]/, '')" minlength="6" maxlength="12" placeholder="Username" value="<?php echo $DataAkun['Username']; ?>" readonly />
+                                    <input id="Username" name="Username" type="text" class="form-control" oninput="this.value = this.value.replace(/[^a-zA-Z0-9]/, '')" minlength="6" maxlength="12" placeholder="Username" value="<?php echo $DataAkun['Username']; ?>" readonly />
                                 </div>
                             </div>
                         </div>
@@ -58,7 +58,7 @@
                             <div class="form-group row">
                                 <label for="Password" class="col-sm-3 col-form-label">Password</label>
                                 <div class="col-sm-9">
-                                    <input id="Password" name="Password" type="text" class="form-control" minlength="2" maxlength="12" onChange="onChange()" placeholder="Password" value="<?php echo $DataAkun['Password']; ?>" required />
+                                    <input id="Password" name="Password" type="text" class="form-control" minlength="2" maxlength="12" onChange="onChange()" placeholder="Password" value="<?php echo $DataAkun['Password']; ?>" />
                                 </div>
                             </div>
                         </div>

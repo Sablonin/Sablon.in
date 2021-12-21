@@ -300,17 +300,13 @@ function BarangActivity()
     $GetData =  mysqli_query($conn, "SELECT * FROM barang ORDER BY IDBarang DESC LIMIT 5");
     while ($Data = mysqli_fetch_array($GetData)) {
         echo "
-            <div class='list d-flex align-items-center border-bottom pb-3 mt-3'>
-                <div class='wrapper w-100 ml-3 mt-3'>
-                    <p><b>$Data[Barang]</b> Telah Di Perbaharui</p>
-                </div>
-            </div>       
+            <li>
+                <div class='list d-flex align-items-center border-bottom pb-3 mt-3'>
+                    <div class='wrapper w-100 ml-3 mt-2'>
+                        <p><b>$Data[Barang]</b> Telah Di Perbaharui</p>
+                    </div>
+                </div>       
+            </li>    
         ";
     }
 }
-
-
-// function Activity() {
-//     global $conn;
-//     $GetFoto = mysqli_q
-// }

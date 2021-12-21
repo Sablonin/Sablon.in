@@ -28,7 +28,7 @@
                                 <label for="IDLevel" class="col-sm-3 col-form-label">Hak Akses</label>
                                 <div class="col-sm-9">
                                     <select id="IDLevel" name="IDLevel" class="form-control">
-                                        <option value=""></option>
+                                        <option value="">Silahkan Pilih Hak Akses</option>
                                         <?php
                                         include 'process/data-option.php';
                                         AmbilAkses(); ?>
@@ -43,7 +43,7 @@
                                 <label for="IDPegawai" class="col-sm-3 col-form-label">Nama Pegawai</label>
                                 <div class="col-sm-9">
                                     <select name="IDPegawai" id="IDPegawai" class="form-control">
-                                        <option value=""></option>
+                                        <option value="">Silahkan Pilih Pegawai</option>
                                         <?php
                                         AmbilNama(); ?>
                                     </select>
@@ -64,7 +64,7 @@
                             <div class="form-group row">
                                 <label for="Username" class="col-sm-3 col-form-label">Username</label>
                                 <div class="col-sm-9">
-                                    <input id="Username" name="Username" type="text" class="form-control" oninput="this.value = this.value.replace(/[^a-zA-z0-9]/, '')" minlength="6" maxlength="12" placeholder="Username" />
+                                    <input id="Username" name="Username" type="text" class="form-control" oninput="this.value = this.value.replace(/[^a-zA-z0-9]/, '')" minlength="6" maxlength="12" placeholder="Contoh : Naruto" />
                                 </div>
                             </div>
                         </div>

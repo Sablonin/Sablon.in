@@ -47,7 +47,7 @@
         <div class="col-lg-4 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Perbandingan Barang & Kategori</h4>
+                    <h4 class="card-title">Barang & Kategori</h4>
                     <div class="w-50 mx-auto mt-5">
                         <canvas id="traffic-chart" width="100" height="100"></canvas>
                     </div>
@@ -64,7 +64,9 @@
                     <div class="d-flex justify-content-between">
                         <h6 class="card-title">Aktivitas Barang</h6>
                     </div>
-                    <?php BarangActivity() ?>
+                    <ul class="bullet-line-list">
+                        <?php BarangActivity() ?>
+                    </ul>
                 </div>
             </div>
         </div>

@@ -28,7 +28,7 @@
                             <div class="form-group row">
                                 <label for="Nama" class="col-sm-3 col-form-label">Nama Pegawai</label>
                                 <div class="col-sm-9">
-                                    <input id="Nama" name="Nama" type="text" class="form-control" oninput="this.value = this.value.replace(/[^a-zA-Z, ]/, '')" minlength="2" maxlength="50" placeholder="Uciha Madara" />
+                                    <input id="Nama" name="Nama" type="text" class="form-control" oninput="this.value = this.value.replace(/[^a-zA-Z ]/, '')" minlength="2" maxlength="50" placeholder="Contoh : Uzumaki Naruto" />
                                 </div>
                             </div>
                         </div>
@@ -37,7 +37,7 @@
                                 <label for="Gender" class="col-sm-3 col-form-label">Jenis Kelamin</label>
                                 <div class="col-sm-9">
                                     <select id="Gender" name="Gender" class="form-control">
-                                        <option value=""></option>
+                                        <option value="">Silahkan Pilih Jenis Kelamin</option>
                                         <option value="Laki-Laki">Laki-Laki</option>
                                         <option value="Perempuan">Perempuan</option>
                                     </select>
@@ -50,7 +50,7 @@
                             <div class="form-group row">
                                 <label for="Alamat" class="col-sm-3 col-form-label">Alamat</label>
                                 <div class="col-sm-9">
-                                    <input id="Alamat" name="Alamat" type="text" class="form-control" oninput="this.value = this.value.replace(/[^a-zA-Z, ]/, '')" minlength="2" maxlength="50" placeholder="Konoha" />
+                                    <input id="Alamat" name="Alamat" type="text" class="form-control" oninput="this.value = this.value.replace(/[^a-zA-Z ]/, '')" minlength="2" maxlength="50" placeholder="Contoh : Konoha" />
                                 </div>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                             <div class="form-group row">
                                 <label for="Telepon" class="col-sm-3 col-form-label">Telepon</label>
                                 <div class="col-sm-9">
-                                    <input id="Telepon" name="Telepon" type="text" class="form-control" oninput="this.value = this.value.replace(/[^0-9]/g, '')" onKeyPress="if(this.value.length==12) return false;" placeholder="0896821257xx" />
+                                    <input id="Telepon" name="Telepon" type="text" class="form-control" oninput="this.value = this.value.replace(/[^0-9]/g, '')" onKeyPress="if(this.value.length==12) return false;" placeholder="Contoh : 0896821257xx" />
                                 </div>
                             </div>
                         </div>
@@ -77,7 +77,7 @@
                                 <label for="IDJabatan" class="col-sm-3 col-form-label">Jabatan</label>
                                 <div class="col-sm-9">
                                     <select id="IDJabatan" name="IDJabatan" class="form-control">
-                                        <option value=""></option>
+                                        <option value="">Silahkan Pilih Jabatan</option>
                                         <?php
                                         include 'process/data-option.php';
                                         AmbilJabatan(); ?>
@@ -92,7 +92,7 @@
                                 <div class="col-sm-12">
                                     <input type="file" name="Gambar" class="file-upload-default">
                                     <div class="input-group col-xs-12">
-                                        <input type="text" class="form-control file-upload-info" disabled placeholder=".jpg / .jpeg / .png">
+                                        <input type="text" class="form-control file-upload-info" disabled placeholder="Contoh File : .jpg / .jpeg / .png">
                                         <span class="input-group-append">
                                             <button class="file-upload-browse btn btn-primary" type="button">Pilih</button>
                                         </span>

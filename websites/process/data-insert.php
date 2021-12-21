@@ -15,8 +15,8 @@ if (isset($_POST['tambah-barang'])) {
         <script>
         setTimeout(function() {
             Swal.fire({
-                title: 'Gagal!',
-                text: 'Silahkan Isi Data Dengan Lengkap!',
+                title: 'Peringatan!',
+                text: 'Silahkan Input Data Dengan Lengkap!',
                 icon: 'error',
                 timer: 2000,
                 showCancelButton: false,
@@ -30,8 +30,38 @@ if (isset($_POST['tambah-barang'])) {
         <script>
         setTimeout(function() {
             Swal.fire({
-                title: 'Gagal!',
+                title: 'Peringatan!',
                 text: 'Data Telah Terdaftar Didalam Sistem!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+    } else if (!preg_match("/^[a-zA-Z ]*$/", $Barang)) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Peringatan!',
+                text: 'Silahkan Input Barang Dengan Benar!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+    } else if (!preg_match("/^[0-9]*$/", $Stok)) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Peringatan!',
+                text: 'Silahkan Input Stok Dengan Benar!',
                 icon: 'error',
                 timer: 2000,
                 showCancelButton: false,
@@ -73,8 +103,8 @@ if (isset($_POST['tambah-kategori'])) {
         <script>
         setTimeout(function() {
             Swal.fire({
-                title: 'Gagal!',
-                text: 'Silahkan Isi Data Dengan Lengkap!',
+                title: 'Peringatan!',
+                text: 'Silahkan Input Data Dengan Lengkap!',
                 icon: 'error',
                 timer: 2000,
                 showCancelButton: false,
@@ -88,8 +118,23 @@ if (isset($_POST['tambah-kategori'])) {
         <script>
         setTimeout(function() {
             Swal.fire({
-                title: 'Gagal!',
+                title: 'Peringatan!',
                 text: 'Data Telah Terdaftar Didalam Sistem!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+    } else if (!preg_match("/^[a-zA-Z ]*$/", $Kategori)) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Peringatan!',
+                text: 'Silahkan Input Kategori Dengan Benar!',
                 icon: 'error',
                 timer: 2000,
                 showCancelButton: false,
@@ -134,8 +179,26 @@ if (isset($_POST['tambah-ulasan'])) {
         <script>
         setTimeout(function() {
             Swal.fire({
-                title: 'Gagal!',
-                text: 'Silahkan Isi Data Dengan Lengkap!',
+                title: 'Peringatan!',
+                text: 'Silahkan Input Data Dengan Lengkap!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+        return false;
+    }
+
+    if (!preg_match("/^[a-zA-Z ]*$/", $InputNama)) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Peringatan!',
+                text: 'Silahkan Input Nama Dengan Benar!',
                 icon: 'error',
                 timer: 2000,
                 showCancelButton: false,
@@ -152,7 +215,7 @@ if (isset($_POST['tambah-ulasan'])) {
         <script>
         setTimeout(function() {
             Swal.fire({
-                title: 'Gagal!',
+                title: 'Peringatan!',
                 text: 'Silahkan Upload Foto!',
                 icon: 'error',
                 timer: 2000,
@@ -174,7 +237,7 @@ if (isset($_POST['tambah-ulasan'])) {
         <script>
         setTimeout(function() {
             Swal.fire({
-                title: 'Gagal!',
+                title: 'Peringatan!',
                 text: 'Silahkan Upload Foto (jpg, jpeg, png)!',
                 icon: 'error',
                 timer: 2000,
@@ -192,7 +255,7 @@ if (isset($_POST['tambah-ulasan'])) {
         <script>
         setTimeout(function() {
             Swal.fire({
-                title: 'Gagal!',
+                title: 'Peringatan!',
                 text: 'Maksimal Size Foto 500kb!',
                 icon: 'error',
                 timer: 2000,
@@ -255,10 +318,64 @@ if (isset($_POST['tambah-pegawai'])) {
         <script>
         setTimeout(function() {
             Swal.fire({
-                title: 'Gagal!',
-                text: 'Silahkan Isi Data Dengan Lengkap!',
+                title: 'Peringatan!',
+                text: 'Silahkan Input Data Dengan Lengkap!',
                 icon: 'error',
                 timer: 3000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+        return false;
+    }
+
+    if (!preg_match("/^[a-zA-Z ]*$/", $Nama)) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Peringatan!',
+                text: 'Silahkan Input Nama Dengan Benar!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+        return false;
+    }
+
+    if (!preg_match("/^[a-zA-Z ]*$/", $Alamat)) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Peringatan!',
+                text: 'Silahkan Input Alamat Dengan Benar!',
+                icon: 'error',
+                timer: 2000,
+                showCancelButton: false,
+                showConfirmButton: false
+            });
+        });  
+        </script>
+        ";
+        return false;
+    }
+
+    if (!preg_match("/^[0-9]*$/", $Telepon)) {
+        echo "
+        <script>
+        setTimeout(function() {
+            Swal.fire({
+                title: 'Peringatan!',
+                text: 'Silahkan Input Telepon Dengan Benar!',
+                icon: 'error',
+                timer: 2000,
                 showCancelButton: false,
                 showConfirmButton: false
             });
@@ -273,7 +390,7 @@ if (isset($_POST['tambah-pegawai'])) {
         <script>
         setTimeout(function() {
             Swal.fire({
-                title: 'Gagal!',
+                title: 'Peringatan!',
                 text: 'Nama Telah Dipakai!',
                 icon: 'error',
                 timer: 2000,
@@ -291,7 +408,7 @@ if (isset($_POST['tambah-pegawai'])) {
         <script>
         setTimeout(function() {
             Swal.fire({
-                title: 'Gagal!',
+                title: 'Peringatan!',
                 text: 'Silahkan Upload Foto!',
                 icon: 'error',
                 timer: 2000,
@@ -313,7 +430,7 @@ if (isset($_POST['tambah-pegawai'])) {
         <script>
         setTimeout(function() {
             Swal.fire({
-                title: 'Gagal!',
+                title: 'Peringatan!',
                 text: 'Silahkan Upload Foto (jpg, jpeg, png)!',
                 icon: 'error',
                 timer: 2000,
@@ -331,7 +448,7 @@ if (isset($_POST['tambah-pegawai'])) {
         <script>
         setTimeout(function() {
             Swal.fire({
-                title: 'Gagal!',
+                title: 'Peringatan!',
                 text: 'Maksimal Size Foto 500kb!',
                 icon: 'error',
                 timer: 2000,
@@ -387,8 +504,8 @@ if (isset($_POST['tambah-akun'])) {
         <script>
         setTimeout(function() {
             Swal.fire({
-                title: 'Gagal!',
-                text: 'Silahkan Isi Data Dengan Lengkap!',
+                title: 'Peringatan!',
+                text: 'Silahkan Input Data Dengan Lengkap!',
                 icon: 'error',
                 timer: 2000,
                 showCancelButton: false,
@@ -402,7 +519,7 @@ if (isset($_POST['tambah-akun'])) {
         <script>
         setTimeout(function() {
             Swal.fire({
-                title: 'Gagal!',
+                title: 'Peringatan!',
                 text: 'Username Telah Dipakai!',
                 icon: 'error',
                 timer: 2000,

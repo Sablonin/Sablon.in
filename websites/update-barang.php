@@ -34,7 +34,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="Stok">Stok</label>
-                                <input id="Stok" class="form-control" type="text" name="Stok" oninput="this.value = this.value.replace(/[^0-9.]/g, '')" onKeyPress="if(this.value.length==4) return false;" value="<?php echo $DataBarang['Stok'] ?>" required></input>
+                                <input id="Stok" class="form-control" type="text" name="Stok" oninput="this.value = this.value.replace(/[^0-9]/g, '')" onKeyPress="if(this.value.length==4) return false;" value="<?php echo $DataBarang['Stok'] ?>"></input>
                             </div>
                             <button type="submit" name="update-barang" class="btn btn-sm btn-warning">
                                 <i class="mdi mdi-update"></i>Update
