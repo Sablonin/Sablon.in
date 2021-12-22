@@ -12,7 +12,10 @@ header("refresh:2;login-page");
   }
 
   .center-loader {
-    margin-top: 20%;
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -46%);
   }
 </style>
 
