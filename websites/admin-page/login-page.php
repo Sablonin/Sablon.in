@@ -46,8 +46,8 @@ if ($_SESSION['Username']) {
             <div class="my-3">
               <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" name="button-login">LOGIN</button>
             </div>
-            <div class="text-center mt-4 font-weight-light">
-              <a href="../landing-page/index.php" class="text-primary">Kembali ke Landing Page</a>
+            <div class="my-3">
+              <a href="../landing-page/index" class="btn btn-block btn-outline-secondary btn-lg font-weight-medium auth-form-btn">Back To Landing Page</a>
             </div>
           </form>
         </div>

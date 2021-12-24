@@ -278,66 +278,10 @@
             <div class="embla" data-skip-snaps="true" data-align="center" data-loop="true" data-auto-play="true" data-auto-play-interval="5" data-draggable="true">
                 <div class="embla__viewport container-fluid">
                     <div class="embla__container">
-                        <div class="embla__slide slider-image item" style="margin-left: 7rem; margin-right: 7rem;">
-                            <div class="user">
-                                <div class="user_image">
-                                    <div class="item-wrapper position-relative">
-                                        <img src="../../assets/images/landing/team3.jpg">
-                                    </div>
-                                </div>
-                                <div class="user_text mb-4">
-                                    <p class="mbr-fonts-style display-7">
-                                        Themes in the Mobirise website builder offer multiple blocks: intros, sliders, galleries, forms, articles, and so on. Start a project and click on the red plus buttons to see the blocks available for your theme.
-                                    </p>
-                                </div>
-                                <div class="user_name mbr-fonts-style mb-2 display-7">
-                                    <strong>Alexa</strong>
-                                </div>
-                                <div class="user_desk mbr-fonts-style display-7">
-                                    DESIGNER
-                                </div>
-                            </div>
-                        </div>
-                        <div class="embla__slide slider-image item" style="margin-left: 7rem; margin-right: 7rem;">
-                            <div class="user">
-                                <div class="user_image">
-                                    <div class="item-wrapper position-relative">
-                                        <img src="../../assets/images/landing/mbr-600x400.jpg">
-                                    </div>
-                                </div>
-                                <div class="user_text mb-4">
-                                    <p class="mbr-fonts-style display-7">
-                                        Themes in the Mobirise website builder offer multiple blocks: intros, sliders, galleries, forms, articles, and so on. Start a project and click on the red plus buttons to see the blocks available for your theme.
-                                    </p>
-                                </div>
-                                <div class="user_name mbr-fonts-style mb-2 display-7">
-                                    <strong>Linda</strong>
-                                </div>
-                                <div class="user_desk mbr-fonts-style display-7">
-                                    DEVELOPER
-                                </div>
-                            </div>
-                        </div>
-                        <div class="embla__slide slider-image item" style="margin-left: 7rem; margin-right: 7rem;">
-                            <div class="user">
-                                <div class="user_image">
-                                    <div class="item-wrapper position-relative">
-                                        <img src="../../assets/images/landing/team1.jpg">
-                                    </div>
-                                </div>
-                                <div class="user_text mb-4">
-                                    <p class="mbr-fonts-style display-7">
-                                        Themes in the Mobirise website builder offer multiple blocks: intros, sliders, galleries, forms, articles, and so on. Start a project and click on the red plus buttons to see the blocks available for your theme.
-                                    </p>
-                                </div>
-                                <div class="user_name mbr-fonts-style mb-2 display-7">
-                                    <strong>Herbert</strong>
-                                </div>
-                                <div class="user_desk mbr-fonts-style display-7">
-                                    DEVELOPER
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                        require 'process/data-view.php';
+                        ViewUlasan();
+                        ?>
                     </div>
                 </div>
                 <button class="embla__button embla__button--prev">
@@ -362,23 +306,25 @@
             </div>
             <div class="row justify-content-center mt-4">
                 <div class="col-lg-8 mx-auto mbr-form">
-                    <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler">
-                        <div class="row">
-
-                            <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
-                                Oops...! some problem!
-                            </div>
-                        </div>
+                    <form action="" method="POST" class="mbr-form form-with-styler">
                         <div class="dragArea row">
-                            <div class="col-md col-sm-12 form-group mb-3" data-for="name">
-                                <input type="text" name="name" placeholder="Nama" data-form-field="name" class="form-control" value="" id="name-form5-19">
+                            <div class="col-md col-sm-12 form-group mb-3" data-for="kode">
+                                <?php require 'process/data-insert.php'; ?>
+                                <input type="text" name="IDUlasan" placeholder="Kode" data-form-field="name" class="form-control" value=" <?php echo GenerateUlasan(); ?>" id="name-form5-19" hidden>
                             </div>
 
+                            <div class="col-md col-sm-12 form-group mb-3" data-for="foto">
+                                <input type="text" name="Foto" placeholder="Foto" data-form-field="name" class="form-control" value="<?php GenerateFoto(); ?>" id="name-form5-19" hidden>
+                            </div>
+
+                            <div class="col-12 form-group mb-3" data-for="name">
+                                <input type="text" name="Nama" oninput="this.value = this.value.replace(/[^a-zA-Z ]/, '')" maxlength="50" placeholder="Nama" data-form-field="name" class="form-control" value="" id="name-form5-19">
+                            </div>
 
                             <div class="col-12 form-group mb-3" data-for="textarea">
-                                <textarea name="textarea" placeholder="Pesan" data-form-field="textarea" class="form-control" id="textarea-form5-19"></textarea>
+                                <textarea name="Ulasan" placeholder="Pesan" data-form-field="textarea" maxlength="255" class="form-control" id="textarea-form5-19"></textarea>
                             </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn"><button type="submit" class="btn btn-primary display-4">Kirim</button></div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn"><button type="submit" name="kirim-ulasan" class="btn btn-primary display-4">Kirim</button></div>
                         </div>
                     </form>
                 </div>
@@ -515,7 +461,7 @@
     <script src="../../assets/embla/script.js"></script>
     <script src="../../assets/mbr-switch-arrow/mbr-switch-arrow.js"></script>
     <script src="../../assets/theme/js/script.js"></script>
-
+    <script src="../../assets/js/sweetalert2.all.min.js"></script>
 
 </body>
 

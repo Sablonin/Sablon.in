@@ -376,8 +376,7 @@ if (isset($_POST['update-ulasan'])) {
         } else {
             $GetUlasan = mysqli_query($conn, "SELECT * FROM ulasan WHERE IDUlasan = '$IDUlasan'");
             $DataUlasan = mysqli_fetch_array($GetUlasan);
-            $DeleteFoto = unlink("../../assets/images/foto-ulasan/$DataUlasan[Foto]");
-            if ($DeleteFoto) {
+            if ($DataUlasan) {
                 move_uploaded_file($Resource, $Location . $UniqName);
                 mysqli_query($conn, "UPDATE ulasan SET Nama = '$Nama', Ulasan = '$Ulasan', Foto = '$UniqName' WHERE IDUlasan = '$IDUlasan'");
                 echo "
