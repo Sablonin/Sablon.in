@@ -2,6 +2,7 @@
 error_reporting(0);
 require '../../../configs/koneksi.php';
 
+
 if ($IDBarang = $_GET['IDBarang']) {
     mysqli_query($conn, "DELETE FROM barang WHERE IDBarang = '$IDBarang'");
 
@@ -46,7 +47,7 @@ if ($IDLogin = $_GET['IDLogin']) {
 if ($IDPegawai = $_GET['IDPegawai']) {
     $GetPegawai = mysqli_query($conn, "SELECT * FROM pegawai WHERE IDPegawai = '$IDPegawai'");
     $GetGambar = mysqli_fetch_array($GetPegawai);
-    $DeleteGambar = unlink("../../assets/images/foto-user/$GetGambar[Foto]");
+    $DeleteGambar = unlink("../../../assets/images/foto-user/$GetGambar[Foto]");
 
     if ($DeleteGambar) {
         mysqli_query($conn, "DELETE FROM pegawai WHERE IDPegawai = '$IDPegawai'");
@@ -72,7 +73,7 @@ if ($IDPegawai = $_GET['IDPegawai']) {
 if ($IDUlasan = $_GET['IDUlasan']) {
     $GetUlasan = mysqli_query($conn, "SELECT * FROM ulasan WHERE IDUlasan = '$IDUlasan'");
     $GetFoto = mysqli_fetch_array($GetUlasan);
-    $DeleteFoto = unlink("../../assets/images/foto-ulasan/$GetFoto[Foto]");
+    $DeleteFoto = unlink("../../../assets/images/foto-ulasan/$GetFoto[Foto]");
 
     if ($DeleteFoto) {
         mysqli_query($conn, "DELETE FROM ulasan WHERE IDUlasan = '$IDUlasan'");

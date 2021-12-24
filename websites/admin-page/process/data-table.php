@@ -264,6 +264,21 @@ function Ulasan()
                 })
             }
         </script>
+    <?php
+    }
+}
+
+function UlasanView()
+{
+    global $conn;
+    $GetUlasan = mysqli_query($conn, "SELECT * FROM ulasan");
+    while ($Data = mysqli_fetch_array($GetUlasan)) { ?>
+        <tr>
+            <td><?= $Data['IDUlasan'] ?></td>
+            <td><img src='../../assets/images/foto-ulasan/<?= $Data['Foto'] ?>' /></td>
+            <td><?= $Data['Nama'] ?></td>
+            <td><?= $Data['Ulasan'] ?></td>
+        </tr>
 <?php
     }
 }
