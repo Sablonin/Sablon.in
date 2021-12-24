@@ -11,5 +11,5 @@ php_flag output_buffering on
    RewriteRule ^(.*)$ $1.php
 </IfModule>
 
-ErrorDocument 404 http://localhost/sablon.in/websites/error-404
-ErrorDocument 500 http://localhost/sablon.in/websites/error-500
+ErrorDocument 404 http://localhost/sablon.in/websites/admin-page/error-404
+ErrorDocument 500 http://localhost/sablon.in/websites/admin-page/error-500
