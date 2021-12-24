@@ -12,7 +12,7 @@
         <div class="card">
             <div class="card-body col-12 mx-auto">
                 <?php
-                include '../configs/koneksi.php';
+                include '../../configs/koneksi.php';
 
                 $IDPegawai = $_GET['IDPegawai'];
                 $GetPegawai = mysqli_query($conn, "SELECT pegawai.*, jabatan.Jabatan FROM pegawai INNER JOIN jabatan ON pegawai.IDJabatan = jabatan.IDJabatan WHERE IDPegawai = '$IDPegawai'");
@@ -26,7 +26,7 @@
                             while ($Data = mysqli_fetch_array($GetFoto)) {
                                 echo "
                                     <div class='item'>
-                                        <img src='../assets/images/foto-user/$Data[Foto]' height='230' class='img-lg rounded-circle mb-3' />
+                                        <img src='../../assets/images/foto-user/$Data[Foto]' height='230' class='img-lg rounded-circle mb-3' />
                                     </div>
                                 ";
                             }

@@ -15,7 +15,7 @@
                 <?php require 'process/data-update.php' ?>
                 <form action="" method="POST" enctype="multipart/form-data" class="form-sample">
                     <?php
-                    require '../configs/koneksi.php';
+                    require '../../configs/koneksi.php';
                     $IDPegawai = $_GET['IDPegawai'];
                     $GetPegawai = mysqli_query($conn, "SELECT pegawai.*, jabatan.Jabatan FROM pegawai INNER JOIN jabatan ON pegawai.IDJabatan = jabatan.IDJabatan WHERE IDPegawai = '$IDPegawai'");
                     $DataPegawai = mysqli_fetch_array($GetPegawai);

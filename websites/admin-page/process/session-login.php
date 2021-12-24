@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../configs/koneksi.php';
+require '../../configs/koneksi.php';
 if (!isset($_SESSION['Username'])) {
     echo "
         <script>

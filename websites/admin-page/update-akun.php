@@ -14,7 +14,7 @@
                 <?php require 'process/data-update.php'; ?>
                 <form method="POST" class="form-sample">
                     <?php
-                    require '../configs/koneksi.php';
+                    require '../../configs/koneksi.php';
                     $IDLogin = $_GET['IDLogin'];
                     $GetAkun = mysqli_query($conn, "SELECT login.*, pegawai.Nama, akses.Akses FROM login INNER JOIN pegawai ON login.IDPegawai = pegawai.IDPegawai INNER JOIN akses ON login.IDLevel = akses.IDLevel WHERE IDLogin = '$IDLogin'");
                     $DataAkun = mysqli_fetch_array($GetAkun); ?>

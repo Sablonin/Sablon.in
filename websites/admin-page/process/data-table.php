@@ -1,5 +1,5 @@
 <?php
-require '../configs/koneksi.php';
+require '../../configs/koneksi.php';
 
 function BarangView()
 {
@@ -101,7 +101,7 @@ function Pegawai()
     $GetPegawai = mysqli_query($conn, "SELECT pegawai.*, jabatan.Jabatan FROM pegawai INNER JOIN jabatan ON pegawai.IDJabatan = jabatan.IDJabatan");
     while ($Data = mysqli_fetch_array($GetPegawai)) { ?>
         <tr>
-            <td><img src='../assets/images/foto-user/<?= $Data['Foto'] ?>' /></td>
+            <td><img src='../../assets/images/foto-user/<?= $Data['Foto'] ?>' /></td>
             <td><?= $Data['Nama'] ?></td>
             <td><?= $Data['Gender'] ?></td>
             <td><?= $Data['Jabatan'] ?></td>
@@ -234,7 +234,7 @@ function Ulasan()
     while ($Data = mysqli_fetch_array($GetUlasan)) { ?>
         <tr>
             <td><?= $Data['IDUlasan'] ?></td>
-            <td><img src='../assets/images/foto-ulasan/<?= $Data['Foto'] ?>' /></td>
+            <td><img src='../../assets/images/foto-ulasan/<?= $Data['Foto'] ?>' /></td>
             <td><?= $Data['Nama'] ?></td>
             <td><?= $Data['Ulasan'] ?></td>
             <td>
@@ -285,7 +285,7 @@ function UlasanActivity()
     while ($Data = mysqli_fetch_array($GetData)) {
         echo "
             <div class='list d-flex align-items-center border-bottom pb-3 mt-3'>
-                    <img class='img-sm rounded-circle' src='../assets/images/foto-ulasan/$Data[Foto]' alt=''>
+                    <img class='img-sm rounded-circle' src='../../assets/images/foto-ulasan/$Data[Foto]' alt=''>
                 <div class='wrapper w-100 ml-3'>
                     <p><b>$Data[Nama]</b> Telah Memberikan Ulasan</p>
                 </div>

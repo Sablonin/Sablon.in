@@ -15,7 +15,7 @@
                     <?php require 'process/data-update.php'; ?>
                     <form class=" col-lg-6 mx-auto cmxform" method="POST" enctype="multipart/form-data" action="">
                         <?php
-                        require '../configs/koneksi.php';
+                        require '../../configs/koneksi.php';
                         $IDUlasan = $_GET['IDUlasan'];
                         $GetUlasan = mysqli_query($conn, "SELECT * FROM ulasan WHERE IDUlasan = '$IDUlasan'");
                         $DataUlasan = mysqli_fetch_array($GetUlasan);

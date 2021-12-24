@@ -1,6 +1,6 @@
 <?php
 error_reporting(0);
-require '../../configs/koneksi.php';
+require '../../../configs/koneksi.php';
 
 if ($IDBarang = $_GET['IDBarang']) {
     mysqli_query($conn, "DELETE FROM barang WHERE IDBarang = '$IDBarang'");
@@ -96,4 +96,4 @@ if ($IDUlasan = $_GET['IDUlasan']) {
 }
 ?>
 
-<script src="../../assets/js/sweetalert2.all.min.js"></script>
+<script src="../../../assets/js/sweetalert2.all.min.js"></script>

@@ -15,7 +15,7 @@
                     <?php require 'process/data-update.php'; ?>
                     <form method="POST" action="" class="col-lg-6 mx-auto cmxform">
                         <?php
-                        require '../configs/koneksi.php';
+                        require '../../configs/koneksi.php';
                         $IDBarang = $_GET['IDBarang'];
                         $GetBarang = mysqli_query($conn, "SELECT barang.*, kategori.Kategori FROM barang INNER JOIN kategori ON barang.IDKategori = kategori.IDKategori WHERE IDBarang = '$IDBarang'");
                         $DataBarang = mysqli_fetch_array($GetBarang);

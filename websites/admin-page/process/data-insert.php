@@ -1,5 +1,5 @@
 <?php
-require '../configs/koneksi.php';
+require '../../configs/koneksi.php';
 
 
 if (isset($_POST['tambah-barang'])) {
@@ -172,7 +172,7 @@ if (isset($_POST['tambah-ulasan'])) {
     $Resource = $_FILES['Foto']['tmp_name'];
     $Check = $_FILES['Foto']['error'];
     $Size = $_FILES['Foto']['size'];
-    $Location = "../assets/images/foto-ulasan/";
+    $Location = "../../assets/images/foto-ulasan/";
 
     if (empty($InputNama) || empty($InputUlasan)) {
         echo "
@@ -309,7 +309,7 @@ if (isset($_POST['tambah-pegawai'])) {
     $SetResource = $_FILES['Gambar']['tmp_name'];
     $SetCheck = $_FILES['Gambar']['error'];
     $SetSize = $_FILES['Gambar']['size'];
-    $SetLocation = "../assets/images/foto-user/";
+    $SetLocation = "../../assets/images/foto-user/";
 
     $cekNama = mysqli_query($conn, "SELECT Nama FROM pegawai WHERE Nama = '$Nama'");
 

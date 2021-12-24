@@ -1,5 +1,5 @@
 <?php
-require '../configs/koneksi.php';
+require '../../configs/koneksi.php';
 
 function AmbilJabatan()
 {

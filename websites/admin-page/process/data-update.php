@@ -1,5 +1,5 @@
 <?php
-require '../configs/koneksi.php';
+require '../../configs/koneksi.php';
 
 if (isset($_POST['update-pegawai'])) {
     $IDPegawai = trim($_POST['IDPegawai']);
@@ -14,7 +14,7 @@ if (isset($_POST['update-pegawai'])) {
     $SetResource = $_FILES['Gambar']['tmp_name'];
     $SetCheck = $_FILES['Gambar']['error'];
     $SetSize = $_FILES['Gambar']['size'];
-    $SetLocation = "../assets/images/foto-user/";
+    $SetLocation = "../../assets/images/foto-user/";
 
     $ValidExtension = ["jpg", "jpeg", "png"];
     $GetNameFile = explode(".", $UpdateGambar);
@@ -136,7 +136,7 @@ if (isset($_POST['update-pegawai'])) {
         } else {
             $GetPegawai = mysqli_query($conn, "SELECT * FROM pegawai WHERE IDPegawai = '$IDPegawai'");
             $DataPegawai = mysqli_fetch_array($GetPegawai);
-            $DeleteGambar = unlink("../assets/images/foto-user/$DataPegawai[Foto]");
+            $DeleteGambar = unlink("../../assets/images/foto-user/$DataPegawai[Foto]");
             if ($DeleteGambar) {
                 move_uploaded_file($SetResource, $SetLocation . $UniqidName);
                 mysqli_query($conn, "UPDATE pegawai SET Nama = '$Nama', Gender = '$Gender', Tanggal = '$Tanggal', Alamat = '$Alamat', Telepon = '$Telepon', Foto = '$UniqidName' WHERE IDPegawai = '$IDPegawai'");
@@ -284,7 +284,7 @@ if (isset($_POST['update-ulasan'])) {
     $Resource = $_FILES['Foto']['tmp_name'];
     $Check = $_FILES['Foto']['error'];
     $Size = $_FILES['Foto']['size'];
-    $Location = "../assets/images/foto-ulasan/";
+    $Location = "../../assets/images/foto-ulasan/";
 
     $ValidExtension = ["jpg", "jpeg", "png"];
     $GetNameFile = explode(".", $UpdateFoto);
@@ -376,7 +376,7 @@ if (isset($_POST['update-ulasan'])) {
         } else {
             $GetUlasan = mysqli_query($conn, "SELECT * FROM ulasan WHERE IDUlasan = '$IDUlasan'");
             $DataUlasan = mysqli_fetch_array($GetUlasan);
-            $DeleteFoto = unlink("../assets/images/foto-ulasan/$DataUlasan[Foto]");
+            $DeleteFoto = unlink("../../assets/images/foto-ulasan/$DataUlasan[Foto]");
             if ($DeleteFoto) {
                 move_uploaded_file($Resource, $Location . $UniqName);
                 mysqli_query($conn, "UPDATE ulasan SET Nama = '$Nama', Ulasan = '$Ulasan', Foto = '$UniqName' WHERE IDUlasan = '$IDUlasan'");

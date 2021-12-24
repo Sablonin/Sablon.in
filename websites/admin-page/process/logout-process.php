@@ -3,6 +3,6 @@ session_start();
 session_destroy();
 echo "
 	<script>
-		document.location = '../login-page';
+		document.location = '../login-loader';
 	</script>
 	";

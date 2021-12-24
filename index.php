@@ -1,1 +1,1 @@
-<?php header("location: websites/login-loader");
+<?php header("location: websites/landing-page/index.php");
